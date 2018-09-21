@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="mhealthdiabetesdbModelStoreContainer" CdmEntityContainer="mhealthdiabetesdb">
+    <FunctionImportMapping FunctionImportName="Prc_ControlDiabetesMellitus" FunctionName="mhealthdiabetesdbModel.Store.Prc_ControlDiabetesMellitus">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="mhealthdiabetesdbModel.Prc_Indicador_Result" />
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Prc_ControlLDL" FunctionName="mhealthdiabetesdbModel.Store.Prc_ControlLDL">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="mhealthdiabetesdbModel.Prc_Indicador_Result" />
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Prc_ControlPTH" FunctionName="mhealthdiabetesdbModel.Store.Prc_ControlPTH">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="mhealthdiabetesdbModel.Prc_Indicador_Result" />
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Prc_MedicionAlbuminuria" FunctionName="mhealthdiabetesdbModel.Store.Prc_MedicionAlbuminuria">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="mhealthdiabetesdbModel.Prc_Indicador_Result" />
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Prc_MedicionCreatinina" FunctionName="mhealthdiabetesdbModel.Store.Prc_MedicionCreatinina">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="mhealthdiabetesdbModel.Prc_Indicador_Result" />
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Prc_MedicionHbA1c" FunctionName="mhealthdiabetesdbModel.Store.Prc_MedicionHbA1c">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="mhealthdiabetesdbModel.Prc_Indicador_Result" />
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Prc_MedicionLDL" FunctionName="mhealthdiabetesdbModel.Store.Prc_MedicionLDL">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="mhealthdiabetesdbModel.Prc_Indicador_Result" />
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Prc_MedicionPTH" FunctionName="mhealthdiabetesdbModel.Store.Prc_MedicionPTH">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="mhealthdiabetesdbModel.Prc_Indicador_Result" />
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Prc_ProgresionEnfermedadRenal" FunctionName="mhealthdiabetesdbModel.Store.Prc_ProgresionEnfermedadRenal">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="mhealthdiabetesdbModel.Prc_Indicador_Result" />
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Prc_ControlHipertensionArterial" FunctionName="mhealthdiabetesdbModel.Store.Prc_ControlHipertensionArterial">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="mhealthdiabetesdbModel.Prc_Indicador_Result" />
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,57 @@
+﻿<script src="~/js/jspkg-archive/vendor/jquery-1.7.2.min.js"></script>
+<link href="~/js/jspkg-archive/jquery.dynatable.css" rel="stylesheet" />
+<script src="~/js/jspkg-archive/jquery.dynatable.js"></script>
+<div>
+    <div class="gray-content">
+        <div class="header">
+            <span></span>
+            <h2>Detalle</h2>
+        </div>
+        <div class="body">
+            <div class="view">
+
+                <div id="descripcion">Cargando...</div>
+                <div class="centered">
+                    
+                    <a href="#" id="prevItem" class="custom-btn" onclick="prevObject()">Anterior</a>
+                    <a href="#" id="nextItem" class="custom-btn" onclick="nextObject()">Siguiente</a>
+                    <p id="records_items" class="blue-text"></p>
+                </div>
+                <h3>Variables Prioritarias</h3>
+                <div class="table-container">
+                    <table class="errors-table">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Valor</th>
+                                <th>Umbral</th>
+                            </tr>
+                        </thead>
+                        <tbody id="lista-prioritarios">
+                        </tbody>
+                    </table>
+                </div>
+                <h3>Variables desactualizadas</h3>
+                <div class="table-container">
+                    <table class="errors-table">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Valor</th>
+                                <th>Meses desactualizados</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="lista-desactualizadas">
+                        </tbody>
+                    </table>
+                </div>
+                <div class="centered">
+                    <a href="#" id="descargar" class="custom-btn mrgn-right" onclick="ConvertorSublist()">Descargar lista</a>
+                    <a href="#" id="atras" class="custom-btn">Atrás</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="~/js/prioritario_detalle.js"></script>

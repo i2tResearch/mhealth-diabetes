@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "Universidad Icesi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    bool mostrarMenu = false;
+    string nombreOrganizacion = "";
+    CAC.Library.Model.DTO.DTOUsuario user = (CAC.Library.Model.DTO.DTOUsuario)Session["currentUser"];
+    if (user != null)
+    {
+        if (user.Organizacion != null)
+        {
+            mostrarMenu = user.Organizacion.EPS;
+            nombreOrganizacion = user.Organizacion.Nombre;
+        }
+    }
+}
+<div class="navigation"><a class="open-menu-btn" href="#" onclick="openSideMenu()">MENÚ</a><span id="nombre_usuario_menu">user name</span></div>
+
+<div class="layout">
+    <div id="backdrop" class="bd-hide"></div>
+    <div id="side-menu">
+        <div class="logo">
+            <img src="images/logo1.png" style="width: 100%;position: absolute;right: -63px;">
+        </div>
+        <div class="user">
+            <div class="text">Bienvenido</div>
+            <div class="text uppercase" id="nombre_usuario">Cargando...</div>
+            <div class="text">@nombreOrganizacion</div>
+        </div>
+        <div class="menu">
+           
+
+            @if (mostrarMenu)
+            {
+                <a id="gestionusuarios" class="menu-link" href="#">Gestión de usuarios</a>
+            }
+            <a id="archivos" class="menu-link" href="#">Archivos</a>
+            <a id="cargararchivo" class="menu-link active" href="#">Importar datos</a>
+            <a id="reportes" class="menu-link" href="#">Reportes</a>
+            <a id="cerrarsesion" class="menu-link" href="#">Cerrar sesión</a>
+        </div>
+
+        <input type="hidden" id="json_txt" />
+
+    </div>
+    <div class="content">
+        @{
+            Html.RenderAction("CargarArchivos", "Admin");
+        }
+    </div>
+</div>
+
+<script type="text/javascript">
+    var url_archivos = "@Url.Action("Archivos", "Admin")";
+    var url_cargararchivos = "@Url.Action("CargarArchivos", "Admin")";
+    var url_gestionarchivos = "@Url.Action("GestionUsuarios", "Admin")";
+    var url_reportes = "@Url.Action("Reportes", "Admin")";
+</script>

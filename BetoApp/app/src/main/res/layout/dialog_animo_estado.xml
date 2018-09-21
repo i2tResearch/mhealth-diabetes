@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="40dp">
+
+    <!-- Título -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tit_animo"
+        android:gravity="center"
+        android:paddingStart="40dp"
+        android:paddingEnd="40dp"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:paddingTop="25dp"
+        android:paddingBottom="25dp"
+        android:id="@+id/titulo"
+        android:theme="@style/TituloDialogo"
+        />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="35dp">
+
+        <ImageButton
+            android:id="@+id/bien"
+            android:layout_height="100dp"
+            android:layout_width="75dp"
+            android:adjustViewBounds="true"
+            android:background="@drawable/bien"
+            />
+
+        <ImageButton
+            android:id="@+id/normal"
+            android:layout_height="100dp"
+            android:layout_width="76dp"
+            android:layout_toRightOf="@+id/bien"
+            android:background="@drawable/normal"
+            android:layout_marginLeft="10dp"
+            android:adjustViewBounds="true"
+            android:layout_marginRight="10dp"/>
+
+        <ImageButton
+            android:id="@+id/mal"
+            android:layout_height="100dp"
+            android:layout_width="85dp"
+            android:background="@drawable/mal"
+            android:layout_toRightOf="@+id/normal" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_mas_tarde"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:background="@color/fondo_tit"
+            android:id="@+id/mas_tarde"
+            android:theme="@style/Boton"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_no_molestar"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:id="@+id/no_molestar"
+            android:background="@color/fondo_tit"
+            android:theme="@style/Boton"/>
+        </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:paddingBottom="40dp">
+
+    <!-- Título -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tit_muy_bien"
+        android:gravity="center"
+        android:paddingStart="45dp"
+        android:paddingEnd="45dp"
+        android:paddingLeft="45dp"
+        android:paddingRight="45dp"
+        android:paddingTop="25dp"
+        android:paddingBottom="25dp"
+        android:background="@color/fondo_tit"
+        android:theme="@style/TituloDialogo"
+        />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal">
+
+        <android.support.v7.widget.AppCompatImageButton
+            android:id="@+id/grabar_toma"
+            android:layout_height="250dp"
+            android:layout_width="280dp"
+            android:adjustViewBounds="true"
+            android:background="@drawable/min_30"
+            android:layout_margin="10dp"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginTop="20dp"
+        >
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_orgullo_ti"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/fondo_tit"
+            android:id="@+id/fin_orgullo"
+            android:theme="@style/Boton"/>
+
+    </LinearLayout>
+
+</LinearLayout>

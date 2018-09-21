@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:helpers="clr-namespace:BetoApp.Helpers"
+    BackgroundColor="{StaticResource BackgroundColor}"
+    x:Class="BetoApp.SignIn.SignInPage"
+    BindingContext="{Binding SignIn, Source={StaticResource Locator}}">
+
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" Android="13" iOS="13, 25, 13, 13" />
+    </ContentPage.Padding>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                
+                <!-- STATE_INIT -->
+
+                <StackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand" IsVisible="{Binding State, Converter={StaticResource StateVisibilityConverter}, ConverterParameter=STATE_INIT}">
+                    <Label Text="Antes de empezar, necesito saber algunas cosas de ti" />
+                </StackLayout>
+
+                <!-- STATE_ROLE -->
+
+                <StackLayout Margin="50" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" IsVisible="{Binding State, Converter={StaticResource StateVisibilityConverter}, ConverterParameter=STATE_ROLE}">
+                    <Button
+                        Text="Eres paciente"
+                        Command="{Binding SetRoleCommand}" CommandParameter="PATIENT"
+                        BackgroundColor="{Binding Role, Converter={StaticResource ButtonBackgroundColorConverter}, ConverterParameter=PATIENT}"
+                        TextColor="{Binding Role, Converter={StaticResource ButtonTextColorConverter}, ConverterParameter=PATIENT}"
+                        HeightRequest="150" />
+                    <Button
+                        Text="Eres cuidador"
+                        Command="{Binding SetRoleCommand}" CommandParameter="KEEPER"
+                        BackgroundColor="{Binding Role, Converter={StaticResource ButtonBackgroundColorConverter}, ConverterParameter=KEEPER}"
+                        TextColor="{Binding Role, Converter={StaticResource ButtonTextColorConverter}, ConverterParameter=KEEPER}"
+                        HeightRequest="150" />
+                </StackLayout>
+
+                <!-- STATE_BIRTHDAY_AND_GENRE -->
+
+                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" IsVisible="{Binding State, Converter={StaticResource StateVisibilityConverter}, ConverterParameter=STATE_BIRTHDAY_AND_GENRE}">
+                    <Label Text="Tu fecha de nacimiento es:" />
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                        <Picker 
+                            Title="Día"
+                            ItemsSource="{Binding DaysList}" 
+                            SelectedItem="{Binding Day}"
+                            TextColor="{Binding BirthdayIsValid,
+                            Converter={StaticResource ValidDateColorConverter}}" />
+                        <Picker 
+                            Title="Mes"
+                            ItemsSource="{Binding MonthsList}" 
+                            SelectedItem="{Binding Month}" 
+                            TextColor="{Binding BirthdayIsValid, 
+                            Converter={StaticResource ValidDateColorConverter}}" />
+                        <Picker 
+                            Title="Año"
+                            ItemsSource="{Binding YearsList}"
+                            SelectedItem="{Binding Year}"
+                            TextColor="{Binding BirthdayIsValid,
+                            Converter={StaticResource ValidDateColorConverter}}" />
+                    </StackLayout>
+
+                    <Label Text="Tu sexo es:" />
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                        <Button 
+                            Text="M"
+                            Command="{Binding SetGenderCommand}" CommandParameter="M"
+                            BackgroundColor="{Binding Gender, Converter={StaticResource ButtonBackgroundColorConverter}, ConverterParameter=M}"
+                            TextColor="{Binding Gender, Converter={StaticResource ButtonTextColorConverter}, ConverterParameter=M}"
+                            WidthRequest="70" HeightRequest="60" />
+                        <Button 
+                            Text="F"
+                            Command="{Binding SetGenderCommand}" CommandParameter="F"
+                            BackgroundColor="{Binding Gender, Converter={StaticResource ButtonBackgroundColorConverter}, ConverterParameter=F}"
+                            TextColor="{Binding Gender, Converter={StaticResource ButtonTextColorConverter}, ConverterParameter=F}"
+                            WidthRequest="70" HeightRequest="60" />
+                    </StackLayout>
+                </StackLayout>
+
+                <!-- STATE_CITY -->
+
+                <StackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand" IsVisible="{Binding State, Converter={StaticResource StateVisibilityConverter}, ConverterParameter=STATE_CITY}">
+                    <Label Text="En qué ciudad vives?" />
+                    <Entry Placeholder="Ciudad" Text="{Binding City, Mode=TwoWay}" />
+                    <Label Text="En qué barrio de la ciudad vives?" />
+                    <Entry Placeholder="Barrio" Text="{Binding Neighborhood, Mode=TwoWay}" />
+                </StackLayout>
+
+                <!-- STATE_EXERCISE -->
+
+                <StackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand" IsVisible="{Binding State, Converter={StaticResource StateVisibilityConverter}, ConverterParameter=STATE_EXERCISE}">
+                    <Label Text="Qué tipo de actividad física haces?" Margin="0,0,0,50"/>
+
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                        <Button 
+                            Text="Caminar"
+                            Command="{Binding SetExerciseCommand}" CommandParameter="WALK"
+                            BackgroundColor="{Binding Exercise, Converter={StaticResource ButtonBackgroundColorConverter}, ConverterParameter=WALK}"
+                            TextColor="{Binding Exercise, Converter={StaticResource ButtonTextColorConverter}, ConverterParameter=WALK}"
+                            WidthRequest="100" HeightRequest="60" />
+                        <Button 
+                            Text="Bicicleta"
+                            Command="{Binding SetExerciseCommand}" CommandParameter="BIKE"
+                            BackgroundColor="{Binding Exercise, Converter={StaticResource ButtonBackgroundColorConverter}, ConverterParameter=BIKE}"
+                            TextColor="{Binding Exercise, Converter={StaticResource ButtonTextColorConverter}, ConverterParameter=BIKE}"
+                            WidthRequest="100" HeightRequest="60" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                        <Button 
+                            Text="Gimnasio"
+                            Command="{Binding SetExerciseCommand}" CommandParameter="GYM"
+                            BackgroundColor="{Binding Exercise, Converter={StaticResource ButtonBackgroundColorConverter}, ConverterParameter=GYM}"
+                            TextColor="{Binding Exercise, Converter={StaticResource ButtonTextColorConverter}, ConverterParameter=GYM}"
+                            WidthRequest="100" HeightRequest="60" />
+                        <Button 
+                            Text="Otra"
+                            Command="{Binding SetExerciseCommand}" CommandParameter="OTHER"
+                            BackgroundColor="{Binding Exercise, Converter={StaticResource ButtonBackgroundColorConverter}, ConverterParameter=OTHER}"
+                            TextColor="{Binding Exercise, Converter={StaticResource ButtonTextColorConverter}, ConverterParameter=OTHER}"
+                            WidthRequest="100" HeightRequest="60" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                        <Button 
+                            Text="Ninguna"
+                            Command="{Binding SetExerciseCommand}" CommandParameter="NONE"
+                            BackgroundColor="{Binding Exercise, Converter={StaticResource ButtonBackgroundColorConverter}, ConverterParameter=NONE}"
+                            TextColor="{Binding Exercise, Converter={StaticResource ButtonTextColorConverter}, ConverterParameter=NONE}"
+                            WidthRequest="100" HeightRequest="60" />
+                    </StackLayout>
+                </StackLayout>
+
+                <!-- STATE_FINAL -->
+
+                <StackLayout Margin="50" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" IsVisible="{Binding State, Converter={StaticResource StateVisibilityConverter}, ConverterParameter=STATE_FINAL}">
+                    <Label Text="Bienvenido!" Margin="0,0,0,50" />
+                    <Label Text="Soy Beto, una aplicación que quiere ayudarte a recordar algunos asuntos de tu cuidado médico básico" />
+                    <Label Text="Cuál es tu nombre?"  Margin="0,50,0,0"/>
+                    <Entry Placeholder="Nombre" Text="{Binding Name, Mode=TwoWay}" />
+                </StackLayout>
+
+                <!-- NEXT BUTTON -->
+
+                <Button Text="{Binding State, Converter={StaticResource NextTextConverter}, ConverterParameter=STATE_FINAL}" Command="{Binding NextCommand}" HorizontalOptions="End" VerticalOptions="End" />
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

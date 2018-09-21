@@ -1,0 +1,34 @@
+﻿<script src="~/js/jspkg-archive/vendor/jquery-1.7.2.min.js"></script>
+<link href="~/js/jspkg-archive/jquery.dynatable.css" rel="stylesheet" />
+<script src="~/js/jspkg-archive/jquery.dynatable.js"></script>
+<div>
+    <div class="gray-content">
+        <div class="header">
+            <span>Paso 2</span>
+            <h2>Asignar datos de archivo</h2>
+        </div>
+        <div class="body">
+            <div class="view">
+                <h4>Los siguientes errores han sido encontrados en el archivo</h4>
+                <div class="table-container">
+                    <table class="errors-table " id="tabla-errores">
+                        <thead>
+                            <tr>
+                                <th>Celda</th>
+                                <th>Descripcion</th>
+                                <th>Valor</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <div class="centered">
+                    <p class="blue-text">Se recomienda solucionar los errores y volver a cargar el archivo</p>
+                    <a href="#" id="descargar" class="custom-btn mrgn-right" onclick="Convertor()">Descargar lista</a>
+                    <a id="cargar_archivo_nuevamente" href="#" class="custom-btn">Cargar archivo nuevamente</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="~/js/asignar-datos-archivo.js"></script>

@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html lang="es-co">
+<head>
+    @Html.Partial("_SharedStyles")
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/site.css">
+
+    <script type="text/javascript" src="~/js/jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="~/js/bootstrap.min.js"></script>
+
+    @Html.Partial("_FirebaseSettings")
+
+    <script type="text/javascript" src="~/js/mostrar-mensaje.js"></script>
+    <script type="text/javascript" src="~/js/site.js"></script>
+    <script type="text/javascript" src="~/js/drift_methods.js"></script>
+    <script type="text/javascript" src="~/js/json_csv.js"></script>
+    <style>
+        #snackbar {
+            left:50%;
+        }
+    </style>
+</head>
+<body>
+    @RenderBody()
+</body>
+</html>

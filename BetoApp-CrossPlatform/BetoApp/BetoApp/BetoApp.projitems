@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{28D1963C-DF5F-4A3D-ABBC-9A37B3D6E8F9}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>BetoApp</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)App.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\MainPage.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\SignInPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\FeelingsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\CalendarPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\AddAlarmPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\BindableBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\User.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Infrastructure\InstanceLocator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MainViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\SignInViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\SignInPage.xaml.cs">
+      <DependentUpon>SignInPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\StringToLowerCaseConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\EqualToObjectConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\BoolToObjectConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\BoolNegationConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\FeelingsViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\FeelingsPage.xaml.cs">
+      <DependentUpon>FeelingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Constants.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\AlertHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\AudioPlayer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\CustomEntry.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\CalendarPage.xaml.cs">
+      <DependentUpon>CalendarPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\CalendarViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Alarm.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\AddAlarmPage.xaml.cs">
+      <DependentUpon>AddAlarmPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\ResourceHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\AddAlarmViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Infrastructure\InstanceLocatorDesign.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\NotificationsHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Pages\" />
+    <Folder Include="$(MSBuildThisFileDirectory)ViewModels\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Converters\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Models\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Infrastructure\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Controls\" />
+  </ItemGroup>
+</Project>

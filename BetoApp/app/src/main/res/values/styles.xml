@@ -1,0 +1,118 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@drawable/launch_screen</item>
+    </style>
+
+    <!-- Título Dialogos -->
+    <style name="TituloDialogo" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:textSize">24sp</item>
+        <!--<item name="android:textStyle">bold</item>-->
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:background">@color/fondo_tit</item>
+    </style>
+
+    <!-- Texto inicio -->
+    <style name="TextoInicio" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:textSize">28sp</item>
+        <!--<item name="android:textStyle">bold</item>-->
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:background">@color/fondo_tit</item>
+    </style>
+
+    <!-- Texto Cuerpo -->
+    <style name="TextoCuerpo" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:textSize">24sp</item>
+        <!--<item name="android:textStyle">bold</item>-->
+        <item name="android:textColor">@color/fondo_tit</item>
+        <item name="android:background">@android:color/white</item>
+    </style>
+
+    <!-- Texto pequeño -->
+    <style name="TextoPequeno" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:textSize">24sp</item>
+        <!--<item name="android:textStyle">bold</item>-->
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:background">@color/fondo_tit</item>
+    </style>
+
+    <!-- Botones  -->
+    <style name="Boton" >
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="colorButtonNormal">@color/fondo_tit</item>
+        <item name="colorControlHighlight">@color/fondo_tit</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <!-- Boton siguiente  -->
+    <style name="BotonSiguiente" >
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="colorButtonNormal">@color/fondo_tit</item>
+        <item name="colorControlHighlight">@color/fondo_tit</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <!-- Boton siguiente  -->
+    <style name="BotonPaciente" >
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">@color/fondo_tit</item>
+        <item name="colorButtonNormal">@android:color/white</item>
+        <item name="colorControlHighlight">@android:color/white</item>
+        <item name="android:textColorPrimary">@color/fondo_tit</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <!-- Boton números  -->
+    <style name="BotonNumeros" >
+        <item name="android:textSize">28sp</item>
+        <item name="android:textColor">@color/fondo_tit</item>
+        <item name="android:textStyle">bold</item>
+        <item name="colorButtonNormal">@android:color/white</item>
+        <item name="colorControlHighlight">@android:color/white</item>
+        <item name="android:textColorPrimary">@color/fondo_tit</item>
+    </style>
+
+    <!-- EditText preguntas  -->
+    <style name="EditTextBlanco" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@android:color/white</item>
+        <!-- Estado normal -->
+        <item name="colorControlNormal">@android:color/white</item>
+        <!-- Estado focus -->
+        <item name="colorControlActivated">@android:color/white</item>
+        <!-- Color texto -->
+        <item name="android:textColorPrimary">@color/fondo_tit</item>
+        <!-- Tamaño texto -->
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <!-- EditText formulario  -->
+    <style name="EditTextFormulario" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@drawable/border_view</item>
+        <!-- Estado normal -->
+        <item name="colorControlNormal">@android:color/white</item>
+        <!-- Estado focus -->
+        <item name="colorControlActivated">@android:color/white</item>
+        <!-- Color texto -->
+        <item name="android:textColorPrimary">@color/fondo_tit</item>
+        <!-- Tamaño texto -->
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="Theme.AppCompat.Translucent" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation</item>
+    </style>
+
+</resources>

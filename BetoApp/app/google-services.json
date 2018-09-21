@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "638226021683",
+    "firebase_url": "https://betoapp-5c373.firebaseio.com",
+    "project_id": "betoapp-5c373",
+    "storage_bucket": "betoapp-5c373.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:638226021683:android:465fff249e5cf0d7",
+        "android_client_info": {
+          "package_name": "co.edu.icesi.i2t.chugarapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "638226021683-0t8khgjss1mst0rl7l1fm9ob1lrgcoet.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "co.edu.icesi.i2t.chugarapp",
+            "certificate_hash": "9ffe71852e8d04f8179b06f40b2231d6f0b5f740"
+          }
+        },
+        {
+          "client_id": "638226021683-v9dov8ldjjrkmfdcqrif956lilvg447t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7bDEakYGc39bIkvDUTkoguUTOLE-EBUE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "638226021683-v9dov8ldjjrkmfdcqrif956lilvg447t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

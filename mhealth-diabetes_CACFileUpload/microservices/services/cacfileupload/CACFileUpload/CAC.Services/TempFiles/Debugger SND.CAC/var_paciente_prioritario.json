@@ -1,0 +1,672 @@
+{
+  "collection": [
+    {
+      "Name": "Fecha_Nacimiento",
+      "Type": "DateTime",
+      "UnknowValue": "1845-01-01",
+      "LstRangeMin": [
+        {
+          "MinEq": "sys"
+        }
+      ],
+      "LstRangeHigher": [
+        {
+          "HigEq": "1900-01-01"
+        }
+      ]
+    },
+    {
+      "Name": "Diagnostico_Hipertension_Arterial",
+      "Type": "Number",
+      "LstRangeEq": [
+        {
+          "Equal": "1",
+          "Column": 11,
+          "ValueColumnEq": "-1",
+          "Different": "1845-01-01"
+        },
+        {
+          "Equal": "2",
+          "Column": 11,
+          "ValueColumnEq": "1845-01-01",
+          "Different": "-1"
+        },
+        {
+          "Equal": "2",
+          "Column": 32,
+          "ValueColumnEq": "1",
+          "Different": "-1"
+        }
+      ]
+    },
+    {
+      "Name": "Fecha_Diagnostico_Hipertension_Arterial",
+      "Type": "DateTime",
+      "UnknowValue": "1800-01-01",
+      "LstRangeMin": [
+        {
+          "MinEq": "sys"
+        }
+      ],
+      "LstRangeHigher": [
+        {
+          "HigEq": "column|7"
+        }
+      ],
+      "LstRangeEq": [
+        {
+          "Equal": "1845-01-01",
+          "Column": 10,
+          "ValueColumnEq": "2",
+          "Different": "-1"
+        }
+      ],
+      "LstRangeDif": [
+        {
+          "Dif": "1845-01-01",
+          "Column": 10,
+          "ValueColumnEq": "1",
+          "Different": "-1"
+        }
+      ]
+    },
+    {
+      "Name": "Diagnostico_Diabetes_Mellitus",
+      "Type": "Number",
+      "LstRangeEq": [
+        {
+          "Equal": "1",
+          "Column": 13,
+          "ValueColumnEq": "-1",
+          "Different": "1845-01-01"
+        },
+        {
+          "Equal": "2",
+          "Column": 13,
+          "ValueColumnEq": "1845-01-01",
+          "Different": "-1"
+        },
+        {
+          "Equal": "2",
+          "Column": 32,
+          "ValueColumnEq": "1",
+          "Different": "-1"
+        }
+      ]
+    },
+    {
+      "Name": "Fecha_Diagnostico_Diabetes_Mellitus",
+      "Type": "DateTime",
+      "UnknowValue": "1800-01-01",
+      "LstRangeMin": [
+        {
+          "MinEq": "sys"
+        }
+      ],
+      "LstRangeHigher": [
+        {
+          "HigEq": "column|7"
+        }
+      ],
+      "LstRangeEq": [
+        {
+          "Equal": "1845-01-01",
+          "Column": 12,
+          "ValueColumnEq": "2",
+          "Different": "-1"
+        }
+      ],
+      "LstRangeDif": [
+        {
+          "Dif": "1845-01-01",
+          "Column": 12,
+          "ValueColumnEq": "1",
+          "Different": "-1"
+        }
+      ]
+    },
+    {
+      "Name": "Etiologia_CAC",
+      "Type": "Number",
+      "LstRangeEq": [
+        {
+          "Equal": "98",
+          "Column": 32,
+          "ValueColumnEq": "-1",
+          "Different": "1"
+        }
+      ]
+    },
+    {
+      "Name": "Peso_Kilogramos",
+      "Type": "Number",
+      "LstRangeMin": [
+        {
+          "MinEq": "500"
+        }
+      ],
+      "LstRangeHigher": [
+        {
+          "HigEq": "1"
+        }
+      ]
+    },
+    {
+      "Name": "Talla_centimetros",
+      "Type": "Number",
+      "LstRangeMin": [
+        {
+          "MinEq": "220"
+        }
+      ],
+      "LstRangeHigher": [
+        {
+          "HigEq": "10"
+        }
+      ]
+    },
+    {
+      "Name": "Tension_Arterial_Sistolica_mmHg",
+      "Type": "Number",
+      "AllowValues": "999",
+      "LstRangeMin": [
+        {
+          "MinEq": "300"
+        }
+      ],
+      "LstRangeHigher": [
+        {
+          "HigEq": "60"
+        }
+      ],
+      "LstRangeEq": [
+        {
+          "Equal": "999",
+          "Column": 33,
+          "ValueColumnEq": "-1",
+          "Different": "-1",
+          "HigEq": "1"
+        }
+      ]
+    },
+    {
+      "Name": "Tension_Arterial_Diastolica_mmHg",
+      "Type": "Number",
+      "AllowValues": "999",
+      "LstRangeMin": [
+        {
+          "MinEq": "150"
+        }
+      ],
+      "LstRangeHigher": [
+        {
+          "HigEq": "20"
+        }
+      ],
+      "LstRangeEq": [
+        {
+          "Equal": "999",
+          "Column": 33,
+          "ValueColumnEq": "-1",
+          "Different": "-1",
+          "HigEq": "1"
+        }
+      ]
+    },
+    {
+      "Name": "Creatinina",
+      "Type": "Number",
+      "AllowValues": "98, 99",
+      "LstRangeMin": [
+        {
+          "MinEq": "20"
+        }
+      ],
+      "LstRangeHigher": [
+        {
+          "HigEq": "0,2"
+        }
+      ],
+      "LstRangeEq": [
+        {
+          "Equal": "98",
+          "Column": 33,
+          "ValueColumnEq": "-1",
+          "Different": "-1",
+          "HigEq": "1"
+        },
+        {
+          "Equal": "99",
+          "Column": 33,
+          "ValueColumnEq": "-1",
+          "Different": "-1",
+          "HigEq": "1"
+        }
+      ]
+    },
+    {
+      "Name": "Fecha_Ultima_Creatinina",
+      "Type": "DateTime",
+      "UnknowValue": "1800-01-01",
+      "NotApply": "1845-01-01",
+      "ValidateOutdated": true,
+      "MonthOutdated": 12,
+      "LstRangeMin": [
+        {
+          "MinEq": "sys"
+        }
+      ],
+      "LstRangeHigher": [
+        {
+          "HigEq": "column|7"
+        }
+      ]
+    },
+    {
+      "Name": "Hemoglobina_Glicosilada",
+      "Type": "Number",
+      "AllowValues": "98, 99",
+      "LstRangeMin": [
+        {
+          "MinEq": "20"
+        }
+      ],
+      "LstRangeHigher": [
+        {
+          "HigEq": "3"
+        }
+      ],
+      "LstRangeEq": [
+        {
+          "Equal": "98",
+          "Column": 33,
+          "ValueColumnEq": "-1",
+          "Different": "-1",
+          "HigEq": "1"
+        },
+        {
+          "Equal": "99",
+          "Column": 33,
+          "ValueColumnEq": "-1",
+          "Different": "-1",
+          "HigEq": "1"
+        }
+      ]
+    },
+    {
+      "Name": "Fecha_Ultima_Hemoglobina_Glicosilada",
+      "Type": "DateTime",
+      "UnknowValue": "1800-01-01",
+      "NotApply": "1845-01-01",
+      "ValidateOutdated": true,
+      "MonthOutdated": 6,
+      "LstRangeMin": [
+        {
+          "MinEq": "sys"
+        }
+      ],
+      "LstRangeHigher": [
+        {
+          "HigEq": "column|7"
+        }
+      ]
+    },
+    {
+      "Name": "Albuminuria",
+      "Type": "Number",
+      "AllowValues": "9999",
+      "LstRangeMin": [
+        {
+          "MinEq": "9000"
+        }
+      ],
+      "LstRangeHigher": [
+        {
+          "HigEq": "0,01"
+        }
+      ],
+      "LstRangeEq": [
+        {
+          "Equal": "9999",
+          "Column": 33,
+          "ValueColumnEq": "-1",
+          "Different": "-1",
+          "HigEq": "1"
+        }
+      ]
+    },
+    {
+      "Name": "Fecha_Ultima_Albuminuria",
+      "Type": "DateTime",
+      "UnknowValue": "1800-01-01",
+      "NotApply": "1845-01-01",
+      "ValidateOutdated": true,
+      "MonthOutdated": 12,
+      "LstRangeMin": [
+        {
+          "MinEq": "sys"
+        }
+      ],
+      "LstRangeHigher": [
+        {
+          "HigEq": "column|7"
+        }
+      ]
+    },
+    {
+      "Name": "Creatinuria",
+      "Type": "Number",
+      "AllowValues": "9888, 9999",
+      "LstRangeMin": [
+        {
+          "MinEq": "3000"
+        }
+      ],
+      "LstRangeHigher": [
+        {
+          "HigEq": "10"
+        }
+      ],
+      "LstRangeEq": [
+        {
+          "Equal": "9888",
+          "Column": 33,
+          "ValueColumnEq": "-1",
+          "Different": "-1",
+          "HigEq": "1"
+        },
+        {
+          "Equal": "9999",
+          "Column": 33,
+          "ValueColumnEq": "-1",
+          "Different": "-1",
+          "HigEq": "1"
+        }
+      ]
+    },
+    {
+      "Name": "Fecha_Ultima_Creatinuria",
+      "Type": "DateTime",
+      "UnknowValue": "1800-01-01",
+      "NotApply": "1845-01-01",
+      "ValidateOutdated": true,
+      "MonthOutdated": 12,
+      "LstRangeMin": [
+        {
+          "MinEq": "sys"
+        }
+      ],
+      "LstRangeHigher": [
+        {
+          "HigEq": "column|7"
+        }
+      ]
+    },
+    {
+      "Name": "LDL",
+      "Type": "Number",
+      "AllowValues": "999",
+      "LstRangeMin": [
+        {
+          "MinEq": "600"
+        }
+      ],
+      "LstRangeHigher": [
+        {
+          "HigEq": "10"
+        }
+      ],
+      "LstRangeEq": [
+        {
+          "Equal": "999",
+          "Column": 33,
+          "ValueColumnEq": "-1",
+          "Different": "-1",
+          "HigEq": "1"
+        }
+      ]
+    },
+    {
+      "Name": "Fecha_Ultimo_LDL",
+      "Type": "DateTime",
+      "UnknowValue": "1800-01-01",
+      "NotApply": "1845-01-01",
+      "ValidateOutdated": true,
+      "MonthOutdated": 12,
+      "LstRangeMin": [
+        {
+          "MinEq": "sys"
+        }
+      ],
+      "LstRangeHigher": [
+        {
+          "HigEq": "column|7"
+        }
+      ]
+    },
+    {
+      "Name": "PTH",
+      "Type": "Number",
+      "AllowValues": "9888, 9999",
+      "LstRangeMin": [
+        {
+          "MinEq": "5000"
+        }
+      ],
+      "LstRangeHigher": [
+        {
+          "HigEq": "0"
+        }
+      ],
+      "LstRangeEq": [
+        {
+          "Equal": "9888",
+          "Column": 33,
+          "ValueColumnEq": "-1",
+          "Different": "-1",
+          "HigEq": "1"
+        },
+        {
+          "Equal": "9999",
+          "Column": 33,
+          "ValueColumnEq": "-1",
+          "Different": "-1",
+          "HigEq": "1"
+        }
+      ]
+    },
+    {
+      "Name": "Fecha_PTH",
+      "Type": "DateTime",
+      "UnknowValue": "1800-01-01",
+      "NotApply": "1845-01-01",
+      "ValidateOutdated": true,
+      "MonthOutdated": 12,
+      "LstRangeMin": [
+        {
+          "MinEq": "sys"
+        }
+      ],
+      "LstRangeHigher": [
+        {
+          "HigEq": "column|7"
+        }
+      ],
+      "LstRangeEq": [
+        {
+          "Equal": "9888",
+          "Column": 33,
+          "ValueColumnEq": "-1",
+          "Different": "-1",
+          "HigEq": "1"
+        },
+        {
+          "Equal": "9999",
+          "Column": 33,
+          "ValueColumnEq": "-1",
+          "Different": "-1",
+          "HigEq": "1"
+        }
+      ]
+    },
+    {
+      "Name": "Tasa_Filtracion_Glomerular_TFG",
+      "Type": "Number",
+      "AllowValues": "988, 999",
+      "LstRangeMin": [
+        {
+          "MinEq": "14",
+          "Column": 33,
+          "ValueColumnEq": "5"
+        }
+      ],
+      "LstRangeHigher": [
+        {
+          "HigEq": "1"
+        }
+      ],
+      "LstRangeEq": [
+        {
+          "Equal": "988",
+          "Column": 33,
+          "ValueColumnEq": "5",
+          "Different": "-1"
+        },
+        {
+          "Equal": "988",
+          "Column": 32,
+          "ValueColumnEq": "1",
+          "Different": "-1"
+        },
+        {
+          "Equal": "999",
+          "Column": 32,
+          "ValueColumnEq": "99",
+          "Different": "-1"
+        },
+        {
+          "Equal": "999",
+          "Column": 33,
+          "HigEq": "1"
+        },
+        {
+          "Equal": "250",
+          "Column": 32,
+          "MinEq": "2"
+        }
+      ]
+    },
+    {
+      "Name": "Diagnostico_Enfermedad_Renal_Cronico_ERC",
+      "Type": "Number",
+      "LstRangeEq": [
+        {
+          "Equal": "1",
+          "Column": 33,
+          "MinEq": "5"
+        }
+      ],
+      "LstRangeDif": [
+        {
+          "Dif": "1",
+          "Column": 10,
+          "ValueColumnEq": "1"
+        },
+        {
+          "Dif": "1",
+          "Column": 12,
+          "ValueColumnEq": "1"
+        }
+      ]
+    },
+    {
+      "Name": "Estadio_ERC",
+      "Type": "Number",
+      "AllowValues": "98, 99",
+      "LstRangeMin": [
+        {
+          "MinEq": "5",
+          "Column": 32,
+          "ValueColumnEq": "1"
+        }
+      ],
+      "LstRangeEq": [
+        {
+          "Equal": "4",
+          "Column": 31,
+          "HigEq": "15"
+        },
+        {
+          "Equal": "4",
+          "Column": 31,
+          "MinEq": "29"
+        },
+        {
+          "Equal": "3",
+          "Column": 31,
+          "HigEq": "30"
+        },
+        {
+          "Equal": "3",
+          "Column": 31,
+          "MinEq": "59"
+        },
+        {
+          "Equal": "2",
+          "Column": 31,
+          "HigEq": "60"
+        },
+        {
+          "Equal": "2",
+          "Column": 31,
+          "MinEq": "89"
+        },
+        {
+          "Equal": "2",
+          "Column": 32,
+          "ValueColumnEq": "1"
+        },
+        {
+          "Equal": "1",
+          "Column": 31,
+          "HigEq": "90"
+        },
+        {
+          "Equal": "1",
+          "Column": 31,
+          "MinEq": "250"
+        },
+        {
+          "Equal": "1",
+          "Column": 32,
+          "ValueColumnEq": "1"
+        },
+        {
+          "Equal": "98",
+          "Column": 32,
+          "ValueColumnEq": "0"
+        },
+        {
+          "Equal": "99",
+          "Column": 32,
+          "HigEq": "2"
+        },
+        {
+          "Equal": "5",
+          "Column": 31,
+          "HigEq": "0"
+        },
+        {
+          "Equal": "5",
+          "Column": 31,
+          "MinEq": "14"
+        },
+        {
+          "Equal": "5",
+          "Column": 31,
+          "ValueColumnEq": "988"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@android:color/transparent"
+    tools:context="co.edu.icesi.i2t.chugarapp.activities.Formulario">
+
+<include layout="@layout/toolbar" android:id="@+id/toolbar"/>
+
+<!-- Título -->
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/tit_form"
+    android:gravity="center"
+    android:layout_below="@id/toolbar"
+    android:paddingStart="40dp"
+    android:paddingEnd="40dp"
+    android:paddingLeft="40dp"
+    android:paddingRight="40dp"
+    android:paddingBottom="10dp"
+    android:background="@color/fondo_tit"
+    android:theme="@style/TituloDialogo"
+    android:id="@+id/tit_form"
+    />
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@id/tit_form"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <EditText
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_marginTop="20dp"
+        android:adjustViewBounds="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:hint="@string/tit_hint"
+        android:theme="@style/EditTextFormulario"
+        android:background="@drawable/border_view"
+        android:id="@+id/pqrs"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:gravity="center_horizontal"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/grabar_toma"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:adjustViewBounds="true"
+            android:background="@drawable/mic" />
+
+        <ImageButton
+            android:id="@+id/reproducir"
+            android:layout_height="70dp"
+            android:layout_width="70dp"
+            android:layout_marginStart="30dp"
+            android:adjustViewBounds="true"
+            android:background="@drawable/play_1" />
+
+    </LinearLayout>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:id="@+id/check_atenci"
+        android:paddingTop="15dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:textColor="@color/fondo_tit"
+        android:text="@string/btn_pqrs"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:text="@string/btn_listo"
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/fondo_tit"
+        android:id="@+id/atencion_medica"
+        android:padding="9dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="18dp"
+        android:theme="@style/Boton"/>
+
+</LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>

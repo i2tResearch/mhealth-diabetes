@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Inicio de Sesión";
+    Layout = "~/Views/Shared/_Layout_Login.cshtml";
+}
+<script type="text/javascript" src="~/js/login.js"></script>
+<div class="login-container">
+    <div class="logo">
+        <!--<h1 class="title">chugar</h1>
+        <div class="subtitle">web</div>-->
+    </div>
+
+    <input type="text" name="usuario" placeholder="Usuario" id="usuario">
+    <input type="password" name="password" placeholder="Contraseña" id="password">
+    <div class="flexed-row">
+        <a href="/Login/RecuperarPassword">Olvidó su contraseña?</a>
+        <div class="remember-me">
+            <input type="checkbox" name="recordarme" id="recordarme"><label for="recordarme">Recordarme</label>
+        </div>
+
+    </div>
+
+    <a href="#" id="iniciar">Iniciar sesión</a>
+</div>

@@ -1,0 +1,268 @@
+﻿﻿<div>
+    <div class="content">
+        <div class="gray-content">
+            <div class="header">
+                <h2>Reportes</h2>
+            </div>
+            <div class="body">
+
+
+                <div class="view">
+                    <h4>Selecciona el reporte que deseas visualizar.</h4>
+
+                    <a id="barra" href="#" style="width : 50%; text-align:center; margin-top: 25px;" class="custom-btn" onclick="cambiarVistaBarra()">Tablas y Barras</a>
+                    <a id="tortas" href="#" style="width : 49%; text-align:center; margin-top: 25px;" class="custom-btn  btn-gray" onclick="cambiarVistaTorta()">Tortas</a>
+
+                    <!-- *************** SELECCIÓN DE BARRAS Y TABLAS  -->
+                    <div class="view" id="fechas">
+                        <div class="custom-form">
+                            <div class="fila">
+                                <div class="custom-label">Fecha inicio</div>
+                                <div class="custom-input"><input type="text" id="inicio" placeholder="MM/dd/yyyy"></div>
+                            </div>
+                            <div class="fila">
+                                <div class="custom-label">Fecha fin</div>
+                                <div class="custom-input"><input type="text" id="fin" placeholder="MM/dd/yyyy"></div>
+                            </div>
+
+                            <div class="fila">
+                                <div class="custom-label">IPS</div>
+                                <div class="custom-input">
+                                    <div class="custom-select">
+                                        <select id="company">
+                                            <option value="0">EPS</option><!-- REVISAR SI VIENE DEL SERVERhay que enviar id para saber cuales ips??? -->
+                                            <!--<option value="2">Comfenalco</option>
+                                            <option value="3">Comfandi</option>-->
+                                        </select>
+                                        <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="fila">
+                                <div class="custom-label">Indicador</div>
+                                <div class="custom-input">
+                                    <div class="custom-select">
+                                        <select id="indicador">
+                                            <option value="0">Seleccione una opción</option>
+                                            <!--<option value="1">Hipertension Arterial</option>-->
+                                            <option value="2">HbA1C</option>
+                                            <option value="3">LDL</option>
+                                            <option value="4">Albuminuria</option>
+                                            <option value="5">Creatinina</option>
+                                            <option value="6">TFG</option>
+                                            <option value="7">PTH 3</option>
+                                            <option value="8">PTH 4</option>
+                                            <option value="9">PTH 5</option>
+                                        </select>
+                                        <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="footer">
+                                <a href="#" class="custom-btn" onclick="cambiarGrafica()">Generar Indicador</a>
+                            </div>
+
+                            <p><h3 class="centered" id="titulo1" style="margin-top:40px"></h3></p>
+
+                            <div id="canvBarra">
+                                <canvas id="chart1" style="height: 100%;"></canvas>
+                            </div>
+
+                            @*<div class="fila">
+                                    <div id="myfirstchart" style="height: 350px;"></div>
+                                </div>
+                                <p><h3 class="centered" id="titulo2"></h3></p>
+                                <div class="fila">
+                                    <p><div id="myfirstchart2" style="height: 350px;"></div></p>
+                                </div>
+
+                                <p><h3 class="centered" id="titulo3"></h3></p>
+                                <div class="fila">
+                                    <div id="myfirstchart3" style="height: 350px;"></div>
+                                </div>*@
+                        </div>
+
+                        <p><h3 class="centered" id="titulo" style="margin-top:40px"></h3></p>
+                        <div class="table-container">
+                            <table class="table">
+                                <thead id="tabla-titulos">
+                                    <tr>
+                                        <th class="centered">Usuario</th>
+                                        <th class="centered">Aprobado</th>
+                                        <th class="centered">Estado</th>
+                                        <th class="centered">Rol</th>
+                                        <th class="centered">Correo</th>
+                                        <th class="centered">Última actividad</th>
+                                        <th class="centered"></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tabla-datos">
+                                    <tr>
+                                        <td class="centered">12345</td>
+                                        <td class="centered"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+                                        <td class="centered"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+                                        <td class="centered">Admin</td>
+                                        <td class="centered">admin@chugar.com</td>
+                                        <td class="centered">25/02/2017 06:46 p.m</td>
+                                        <td class="centered"><a class="mrgn-right" href="editar-usuario.html"><span class="glyphicon glyphicon-pencil" aria-hidden="true" /></a>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="custom-form" id="espacio">
+                            <p><h3 class="centered" id="titulos4"></h3></p>
+                            <div class="fila">
+                                <div id="myfirstchart4" style="height: 350px;"></div>
+                            </div>
+                        </div>
+
+                        <p><h3 class="centered" id="titulo4" style="margin-top:40px"></h3></p>
+                        <div class="table-container">
+                            <table class="table">
+                                <thead id="tabla-titulos4">
+                                    <tr>
+                                        <th class="centered">Usuario</th>
+                                        <th class="centered">Aprobado</th>
+                                        <th class="centered">Estado</th>
+                                        <th class="centered">Rol</th>
+                                        <th class="centered">Correo</th>
+                                        <th class="centered">Última actividad</th>
+                                        <th class="centered"></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tabla-datos4">
+                                    <tr>
+                                        <td class="centered">12345</td>
+                                        <td class="centered"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+                                        <td class="centered"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+                                        <td class="centered">Admin</td>
+                                        <td class="centered">admin@chugar.com</td>
+                                        <td class="centered">25/02/2017 06:46 p.m</td>
+                                        <td class="centered"><a class="mrgn-right" href="editar-usuario.html"><span class="glyphicon glyphicon-pencil" aria-hidden="true" /></a>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+
+                    <!-- *************** SELECCIÓN DE BARRAS Y TABLAS ********************** -->
+                    <!-- ------------- SELECCIÓN DE TORTAS --------------  -->
+                    <div class="view" id="meses">
+                        <div class="custom-form">
+                            <div class="fila">
+                                <div class="custom-label">Mes</div>
+                                <div class="custom-input">
+                                    <div class="custom-select">
+                                        <select id="mes">
+                                            <option value="0">Seleccione una opción</option>
+                                            <option value="1">Enero</option>
+                                            <option value="2">Febrero</option>
+                                            <option value="3">Marzo</option>
+                                            <option value="4">Abril</option>
+                                            <option value="5">Mayo</option>
+                                            <option value="6">Junio</option>
+                                            <option value="7">Julio</option>
+                                            <option value="8">Agosto</option>
+                                            <option value="9">Septiembre</option>
+                                            <option value="10">Octubre</option>
+                                            <option value="11">Noviembre</option>
+                                            <option value="12">Diciembre</option>
+                                        </select>
+                                        <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="fila">
+                                <div class="custom-label">Año</div>
+                                <div class="custom-input">
+                                    <div class="custom-select">
+                                        <select id="ano">
+                                            <option value="0">Seleccione una opción</option>
+                                            <option value="2006">2006</option>
+                                            <option value="2007">2007</option>
+                                            <option value="2008">2008</option>
+                                            <option value="2009">2009</option>
+                                            <option value="2010">2010</option>
+                                            <option value="2011">2011</option>
+                                            <option value="2012">2012</option>
+                                            <option value="2013">2013</option>
+                                            <option value="2014">2014</option>
+                                            <option value="2015">2015</option>
+                                            <option value="2016">2016</option>
+                                            <option value="2017">2017</option>
+                                        </select>
+                                        <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="fila">
+                                <div class="custom-label">IPS</div>
+                                <div class="custom-input">
+                                    <div class="custom-select">
+                                        <select id="companyTorta">
+                                            <option value="0">EPS</option><!-- REVISAR SI VIENE DEL SERVERhay que enviar id para saber cuales ips??? -->
+                                            <!--<option value="2">Comfenalco</option>
+                                            <option value="3">Comfandi</option>-->
+                                        </select>
+                                        <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="fila">
+                                <div class="custom-label">Indicador</div>
+                                <div class="custom-input">
+                                    <div class="custom-select">
+                                        <select id="indicadorTorta">
+                                            <option value="0">Seleccione una opción</option>
+                                            <!--option value="1">Hipertension Arterial</option>-->
+                                            <option value="2">HbA1C</option>
+                                            <option value="3">LDL</option>
+                                            <option value="4">Albuminuria</option>
+                                            <option value="5">Creatinina</option>
+                                            <option value="6">TFG</option>
+                                            <option value="7">PTH 3</option>
+                                            <option value="8">PTH 4</option>
+                                            <option value="9">PTH 5</option>
+                                        </select>
+                                        <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="footer">
+                                <a href="#" class="custom-btn" onclick="cambiarGrafica2()">Generar Indicador</a>
+                            </div>
+
+                            <p><h3 class="centered" id="tituloTorta" style="margin-top:40px"></h3></p>
+
+                            <div id="canvTorta">
+                                <canvas id="chart2" style="height: 100%;"></canvas>
+                            </div>
+
+                            @*<div class="fila">
+                                    <div id="tortaGrande" style="height: 450px;"></div>
+                                </div>*@
+                        </div>
+                    </div>
+
+                    <!-- ------------- SELECCIÓN DE TORTAS --------------  -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <link rel="stylesheet" type="text/css" href="~/css/morris.css">
+    <link rel="stylesheet" type="text/css" href="~/css/jquery-ui.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.bundle.min.js"></script>
+    <script type="text/javascript" src="~/js/morris.js"></script>
+    <script type="text/javascript" src="~/js/morris.min.js"></script>
+    <script type="text/javascript" src="~/js/raphael.js"></script>
+    <script type="text/javascript" src="~/js/jquery-ui.js"></script>
+    <script type="text/javascript" src="~/js/reporte.js"></script>
+</div>

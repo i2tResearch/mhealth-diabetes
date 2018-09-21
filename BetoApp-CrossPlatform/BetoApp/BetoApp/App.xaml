@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Application
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:infra="clr-namespace:BetoApp.Infrastructure"
+    xmlns:conv="clr-namespace:BetoApp.Converters"
+    xmlns:controls="clr-namespace:BetoApp.Controls"
+    x:Class="BetoApp.App">
+    
+    <Application.Resources>
+        <ResourceDictionary>
+            
+            <!-- Colors -->
+            <Color x:Key="BackgroundColor">#093E4C</Color>
+            <Color x:Key="DarkBlueColor">#093E4C</Color>
+            <Color x:Key="WhiteColor">#FFFFFF</Color>
+            
+            <!-- Styles -->
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="Large" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="TextColor" Value="{StaticResource WhiteColor}" />
+            </Style>
+            
+            <Style TargetType="Button">
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="TextColor" Value="{StaticResource DarkBlueColor}" />
+                <Setter Property="BackgroundColor" Value="{StaticResource WhiteColor}" />
+                <Setter Property="BorderRadius" Value="0" />
+                <Setter Property="BorderWidth" Value="0.1" />
+                <Setter Property="BorderColor" Value="{StaticResource WhiteColor}" />
+            </Style>
+
+            <Style TargetType="Picker">
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="HeightRequest" Value="60" />
+                <Setter Property="WidthRequest" Value="70" />
+                <Setter Property="BackgroundColor" Value="{StaticResource WhiteColor}" />
+            </Style>
+
+            <Style TargetType="controls:CustomEntry">
+                <Setter Property="TextColor" Value="{StaticResource DarkBlueColor}" />
+                <Setter Property="BackgroundColor" Value="{StaticResource WhiteColor}" />
+                <Setter Property="HeightRequest" Value="60" />
+                <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
+
+            <Style TargetType="Editor">
+                <Setter Property="TextColor" Value="{StaticResource DarkBlueColor}" />
+                <Setter Property="BackgroundColor" Value="{StaticResource WhiteColor}" />
+                <Setter Property="HeightRequest" Value="150" />
+                <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
+            
+            <!-- Locators -->
+            <infra:InstanceLocator x:Key="Locator"></infra:InstanceLocator>
+
+            <conv:EqualToObjectConverter x:Key="ButtonBackgroundColorConverter">
+                <x:Arguments>
+                    <x:String>#FFFFFF</x:String>
+                    <x:String>#093E4C</x:String>
+                </x:Arguments>
+            </conv:EqualToObjectConverter>
+            
+            <conv:EqualToObjectConverter x:Key="ButtonTextColorConverter">
+                <x:Arguments>
+                    <x:String>#093E4C</x:String>
+                    <x:String>#FFFFFF</x:String>
+                </x:Arguments>
+            </conv:EqualToObjectConverter>
+            
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

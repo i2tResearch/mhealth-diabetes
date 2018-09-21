@@ -1,0 +1,775 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="tbl_archivo_cac" EntityType="Model.Store.tbl_archivo_cac" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_organizacion" EntityType="Model.Store.tbl_organizacion" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_paciente_prioritario" EntityType="Model.Store.tbl_paciente_prioritario" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_rol" EntityType="Model.Store.tbl_rol" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_usuario" EntityType="Model.Store.tbl_usuario" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_usuario_rol" EntityType="Model.Store.tbl_usuario_rol" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_validacion_archivo" EntityType="Model.Store.tbl_validacion_archivo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_variable_prioritaria" EntityType="Model.Store.tbl_variable_prioritaria" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_cac" EntityType="Model.Store.tbl_cac" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_variable_desactualizada" EntityType="Model.Store.tbl_variable_desactualizada" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_tbl_archivo_cac_tbl_usuario" Association="Model.Store.FK_tbl_archivo_cac_tbl_usuario">
+      <End Role="tbl_usuario" EntitySet="tbl_usuario" />
+      <End Role="tbl_archivo_cac" EntitySet="tbl_archivo_cac" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_paciente_prioritario_tbl_archivo_cac" Association="Model.Store.FK_tbl_paciente_prioritario_tbl_archivo_cac">
+      <End Role="tbl_archivo_cac" EntitySet="tbl_archivo_cac" />
+      <End Role="tbl_paciente_prioritario" EntitySet="tbl_paciente_prioritario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_validacion_archivo_tbl_archivo_cac" Association="Model.Store.FK_tbl_validacion_archivo_tbl_archivo_cac">
+      <End Role="tbl_archivo_cac" EntitySet="tbl_archivo_cac" />
+      <End Role="tbl_validacion_archivo" EntitySet="tbl_validacion_archivo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_usuario_tbl_organizacion" Association="Model.Store.FK_tbl_usuario_tbl_organizacion">
+      <End Role="tbl_organizacion" EntitySet="tbl_organizacion" />
+      <End Role="tbl_usuario" EntitySet="tbl_usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_paciente_prioritariotbl_variable_prioritaria" Association="Model.Store.FK_tbl_paciente_prioritariotbl_variable_prioritaria">
+      <End Role="tbl_paciente_prioritario" EntitySet="tbl_paciente_prioritario" />
+      <End Role="tbl_variable_prioritaria" EntitySet="tbl_variable_prioritaria" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_usuario_rol_tbl_rol" Association="Model.Store.FK_tbl_usuario_rol_tbl_rol">
+      <End Role="tbl_rol" EntitySet="tbl_rol" />
+      <End Role="tbl_usuario_rol" EntitySet="tbl_usuario_rol" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_usuario_rol_tbl_usuario" Association="Model.Store.FK_tbl_usuario_rol_tbl_usuario">
+      <End Role="tbl_usuario" EntitySet="tbl_usuario" />
+      <End Role="tbl_usuario_rol" EntitySet="tbl_usuario_rol" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_CAC_tbl_archivo_cac" Association="Model.Store.FK_tbl_CAC_tbl_archivo_cac">
+      <End Role="tbl_archivo_cac" EntitySet="tbl_archivo_cac" />
+      <End Role="tbl_cac" EntitySet="tbl_cac" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_paciente_prioritariotbl_variable_desactualizada" Association="Model.Store.FK_tbl_paciente_prioritariotbl_variable_desactualizada">
+      <End Role="tbl_paciente_prioritario" EntitySet="tbl_paciente_prioritario" />
+      <End Role="tbl_variable_desactualizada" EntitySet="tbl_variable_desactualizada" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="tbl_archivo_cac">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="guid" Nullable="false" />
+    <Property Name="nombre" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="tamano" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="fechaCreacion" Type="datetime" Nullable="false" />
+    <Property Name="numFilasImportadas" Type="int" Nullable="false" />
+    <Property Name="urlArchivo" Type="varchar" Nullable="false" MaxLength="500" />
+    <Property Name="idUsuario" Type="guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_organizacion">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="guid" Nullable="false" />
+    <Property Name="NIT" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="nombre" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="direccion" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="numTelefonico" Type="varchar" Nullable="true" MaxLength="10" />
+    <Property Name="eps" Type="bool" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_paciente_prioritario">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="guid" Nullable="false" />
+    <Property Name="nombres" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="apellidos" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="cedula" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="numContacto" Type="varchar" Nullable="true" MaxLength="10" />
+    <Property Name="idArchivo" Type="guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_rol">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="guid" Nullable="false" />
+    <Property Name="nombre" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="descripcion" Type="varchar" Nullable="true" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tbl_usuario">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="guid" Nullable="false" />
+    <Property Name="nombres" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="apellidos" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="email" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="numCelular" Type="varchar" Nullable="true" MaxLength="10" />
+    <Property Name="idOrganizacion" Type="guid" Nullable="false" />
+    <Property Name="uid_firebase" Type="longtext" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_usuario_rol">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="guid" Nullable="false" />
+    <Property Name="idRol" Type="guid" Nullable="false" />
+    <Property Name="idUsuario" Type="guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_validacion_archivo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="guid" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" Nullable="false" MaxLength="500" />
+    <Property Name="fechaCreacion" Type="datetime" Nullable="false" />
+    <Property Name="idArchivo" Type="guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_variable_prioritaria">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="guid" Nullable="false" />
+    <Property Name="nombreVariable" Type="longtext" Nullable="false" />
+    <Property Name="valorVariable" Type="longtext" Nullable="false" />
+    <Property Name="valorUmbral" Type="longtext" Nullable="false" />
+    <Property Name="tbl_paciente_prioritario_id" Type="guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_cac">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="guid" Nullable="false" />
+    <Property Name="idArchivo" Type="guid" Nullable="false" />
+    <Property Name="primerNombre" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="segundoNombre" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="primerApellido" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="segundoApellido" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="tipoIdentificacion" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="numIdentificacion" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="fechaNacimiento" Type="datetime" Nullable="false" />
+    <Property Name="sexo" Type="varchar" Nullable="false" MaxLength="2" />
+    <Property Name="diagHiperArterial" Type="varchar" Nullable="false" MaxLength="5" />
+    <Property Name="fecDiagHiperArterial" Type="datetime" Nullable="false" />
+    <Property Name="diagDiabetesMellitus" Type="varchar" Nullable="false" MaxLength="5" />
+    <Property Name="fecDiadDiabetesMellitus" Type="datetime" Nullable="false" />
+    <Property Name="etiologiaCAC" Type="varchar" Nullable="false" MaxLength="5" />
+    <Property Name="PesoKG" Type="varchar" Nullable="false" MaxLength="5" />
+    <Property Name="tallaCtms" Type="varchar" Nullable="false" MaxLength="5" />
+    <Property Name="tensionArtSistolica" Type="varchar" Nullable="false" MaxLength="5" />
+    <Property Name="tensionArtDiastolica" Type="varchar" Nullable="false" MaxLength="5" />
+    <Property Name="creatinina" Type="varchar" Nullable="false" MaxLength="5" />
+    <Property Name="fecUltimaCreatinina" Type="datetime" Nullable="false" />
+    <Property Name="hemoglobinaGlicosilada" Type="varchar" Nullable="false" MaxLength="5" />
+    <Property Name="fecHemoGlicosilada" Type="datetime" Nullable="false" />
+    <Property Name="albuminuria" Type="varchar" Nullable="false" MaxLength="5" />
+    <Property Name="fecUltimaAlbuminuria" Type="datetime" Nullable="false" />
+    <Property Name="creatinuria" Type="varchar" Nullable="false" MaxLength="5" />
+    <Property Name="fecUltimaCreatinuria" Type="datetime" Nullable="false" />
+    <Property Name="LDL" Type="varchar" Nullable="false" MaxLength="5" />
+    <Property Name="fecUltimaLDL" Type="datetime" Nullable="false" />
+    <Property Name="PTH" Type="varchar" Nullable="false" MaxLength="5" />
+    <Property Name="fechaPTH" Type="datetime" Nullable="false" />
+    <Property Name="tasaFiltracionGlomerular" Type="varchar" Nullable="false" MaxLength="5" />
+    <Property Name="diagEnferRenalCronicoERC" Type="varchar" Nullable="false" MaxLength="5" />
+    <Property Name="estadioERC" Type="varchar" Nullable="false" MaxLength="5" />
+    <Property Name="idOrganizacion" Type="guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_variable_desactualizada">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="guid" Nullable="false" />
+    <Property Name="nombreVariable" Type="longtext" Nullable="false" />
+    <Property Name="valorVariable" Type="longtext" Nullable="false" />
+    <Property Name="mesesDesactualizado" Type="longtext" Nullable="false" />
+    <Property Name="tbl_paciente_prioritario_id" Type="guid" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_tbl_archivo_cac_tbl_usuario">
+    <End Role="tbl_usuario" Type="Model.Store.tbl_usuario" Multiplicity="1" />
+    <End Role="tbl_archivo_cac" Type="Model.Store.tbl_archivo_cac" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_usuario">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_archivo_cac">
+        <PropertyRef Name="idUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_paciente_prioritario_tbl_archivo_cac">
+    <End Role="tbl_archivo_cac" Type="Model.Store.tbl_archivo_cac" Multiplicity="1" />
+    <End Role="tbl_paciente_prioritario" Type="Model.Store.tbl_paciente_prioritario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_archivo_cac">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_paciente_prioritario">
+        <PropertyRef Name="idArchivo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_validacion_archivo_tbl_archivo_cac">
+    <End Role="tbl_archivo_cac" Type="Model.Store.tbl_archivo_cac" Multiplicity="1" />
+    <End Role="tbl_validacion_archivo" Type="Model.Store.tbl_validacion_archivo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_archivo_cac">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_validacion_archivo">
+        <PropertyRef Name="idArchivo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_usuario_tbl_organizacion">
+    <End Role="tbl_organizacion" Type="Model.Store.tbl_organizacion" Multiplicity="1" />
+    <End Role="tbl_usuario" Type="Model.Store.tbl_usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_organizacion">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_usuario">
+        <PropertyRef Name="idOrganizacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_paciente_prioritariotbl_variable_prioritaria">
+    <End Role="tbl_paciente_prioritario" Type="Model.Store.tbl_paciente_prioritario" Multiplicity="1" />
+    <End Role="tbl_variable_prioritaria" Type="Model.Store.tbl_variable_prioritaria" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_paciente_prioritario">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_variable_prioritaria">
+        <PropertyRef Name="tbl_paciente_prioritario_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_usuario_rol_tbl_rol">
+    <End Role="tbl_rol" Type="Model.Store.tbl_rol" Multiplicity="1" />
+    <End Role="tbl_usuario_rol" Type="Model.Store.tbl_usuario_rol" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_rol">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_usuario_rol">
+        <PropertyRef Name="idRol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_usuario_rol_tbl_usuario">
+    <End Role="tbl_usuario" Type="Model.Store.tbl_usuario" Multiplicity="1" />
+    <End Role="tbl_usuario_rol" Type="Model.Store.tbl_usuario_rol" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_usuario">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_usuario_rol">
+        <PropertyRef Name="idUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_CAC_tbl_archivo_cac">
+    <End Role="tbl_archivo_cac" Type="Model.Store.tbl_archivo_cac" Multiplicity="1" />
+    <End Role="tbl_cac" Type="Model.Store.tbl_cac" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_archivo_cac">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_cac">
+        <PropertyRef Name="idArchivo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_paciente_prioritariotbl_variable_desactualizada">
+    <End Role="tbl_paciente_prioritario" Type="Model.Store.tbl_paciente_prioritario" Multiplicity="1" />
+    <End Role="tbl_variable_desactualizada" Type="Model.Store.tbl_variable_desactualizada" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_paciente_prioritario">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_variable_desactualizada">
+        <PropertyRef Name="tbl_paciente_prioritario_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="ModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tbl_archivo_cac" EntityType="Model.tbl_archivo_cac" />
+          <EntitySet Name="tbl_organizacion" EntityType="Model.tbl_organizacion" />
+          <EntitySet Name="tbl_paciente_prioritario" EntityType="Model.tbl_paciente_prioritario" />
+          <EntitySet Name="tbl_rol" EntityType="Model.tbl_rol" />
+          <EntitySet Name="tbl_usuario" EntityType="Model.tbl_usuario" />
+          <EntitySet Name="tbl_usuario_rol" EntityType="Model.tbl_usuario_rol" />
+          <EntitySet Name="tbl_validacion_archivo" EntityType="Model.tbl_validacion_archivo" />
+          <EntitySet Name="tbl_variable_prioritaria" EntityType="Model.tbl_variable_prioritaria" />
+          <AssociationSet Name="FK_tbl_archivo_cac_tbl_usuario" Association="Model.FK_tbl_archivo_cac_tbl_usuario">
+            <End Role="tbl_usuario" EntitySet="tbl_usuario" />
+            <End Role="tbl_archivo_cac" EntitySet="tbl_archivo_cac" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_paciente_prioritario_tbl_archivo_cac" Association="Model.FK_tbl_paciente_prioritario_tbl_archivo_cac">
+            <End Role="tbl_archivo_cac" EntitySet="tbl_archivo_cac" />
+            <End Role="tbl_paciente_prioritario" EntitySet="tbl_paciente_prioritario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_validacion_archivo_tbl_archivo_cac" Association="Model.FK_tbl_validacion_archivo_tbl_archivo_cac">
+            <End Role="tbl_archivo_cac" EntitySet="tbl_archivo_cac" />
+            <End Role="tbl_validacion_archivo" EntitySet="tbl_validacion_archivo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_usuario_tbl_organizacion" Association="Model.FK_tbl_usuario_tbl_organizacion">
+            <End Role="tbl_organizacion" EntitySet="tbl_organizacion" />
+            <End Role="tbl_usuario" EntitySet="tbl_usuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_paciente_prioritariotbl_variable_prioritaria" Association="Model.FK_tbl_paciente_prioritariotbl_variable_prioritaria">
+            <End Role="tbl_paciente_prioritario" EntitySet="tbl_paciente_prioritario" />
+            <End Role="tbl_variable_prioritaria" EntitySet="tbl_variable_prioritaria" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_usuario_rol_tbl_rol" Association="Model.FK_tbl_usuario_rol_tbl_rol">
+            <End Role="tbl_rol" EntitySet="tbl_rol" />
+            <End Role="tbl_usuario_rol" EntitySet="tbl_usuario_rol" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_usuario_rol_tbl_usuario" Association="Model.FK_tbl_usuario_rol_tbl_usuario">
+            <End Role="tbl_usuario" EntitySet="tbl_usuario" />
+            <End Role="tbl_usuario_rol" EntitySet="tbl_usuario_rol" />
+          </AssociationSet>
+          <EntitySet Name="tbl_cac" EntityType="Model.tbl_cac" />
+          <AssociationSet Name="FK_tbl_CAC_tbl_archivo_cac" Association="Model.FK_tbl_CAC_tbl_archivo_cac">
+            <End Role="tbl_archivo_cac" EntitySet="tbl_archivo_cac" />
+            <End Role="tbl_cac" EntitySet="tbl_cac" />
+          </AssociationSet>
+          <EntitySet Name="tbl_variable_desactualizada" EntityType="Model.tbl_variable_desactualizada" />
+          <AssociationSet Name="FK_tbl_paciente_prioritariotbl_variable_desactualizada" Association="Model.FK_tbl_paciente_prioritariotbl_variable_desactualizada">
+            <End Role="tbl_paciente_prioritario" EntitySet="tbl_paciente_prioritario" />
+            <End Role="tbl_variable_desactualizada" EntitySet="tbl_variable_desactualizada" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="tbl_archivo_cac">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Guid" Nullable="false" />
+          <Property Name="nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="tamano" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fechaCreacion" Type="DateTime" Nullable="false" />
+          <Property Name="numFilasImportadas" Type="Int32" Nullable="false" />
+          <Property Name="urlArchivo" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="idUsuario" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="tbl_usuario" Relationship="Model.FK_tbl_archivo_cac_tbl_usuario" FromRole="tbl_archivo_cac" ToRole="tbl_usuario" />
+          <NavigationProperty Name="tbl_paciente_prioritario" Relationship="Model.FK_tbl_paciente_prioritario_tbl_archivo_cac" FromRole="tbl_archivo_cac" ToRole="tbl_paciente_prioritario" />
+          <NavigationProperty Name="tbl_validacion_archivo" Relationship="Model.FK_tbl_validacion_archivo_tbl_archivo_cac" FromRole="tbl_archivo_cac" ToRole="tbl_validacion_archivo" />
+          <NavigationProperty Name="tbl_cac" Relationship="Model.FK_tbl_CAC_tbl_archivo_cac" FromRole="tbl_archivo_cac" ToRole="tbl_cac" />
+        </EntityType>
+        <EntityType Name="tbl_organizacion">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Guid" Nullable="false" />
+          <Property Name="NIT" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="direccion" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="numTelefonico" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="eps" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tbl_usuario" Relationship="Model.FK_tbl_usuario_tbl_organizacion" FromRole="tbl_organizacion" ToRole="tbl_usuario" />
+        </EntityType>
+        <EntityType Name="tbl_paciente_prioritario">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Guid" Nullable="false" />
+          <Property Name="nombres" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="apellidos" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="cedula" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="numContacto" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="idArchivo" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="tbl_archivo_cac" Relationship="Model.FK_tbl_paciente_prioritario_tbl_archivo_cac" FromRole="tbl_paciente_prioritario" ToRole="tbl_archivo_cac" />
+          <NavigationProperty Name="tbl_variable_prioritaria" Relationship="Model.FK_tbl_paciente_prioritariotbl_variable_prioritaria" FromRole="tbl_paciente_prioritario" ToRole="tbl_variable_prioritaria" />
+          <NavigationProperty Name="tbl_variable_desactualizada" Relationship="Model.FK_tbl_paciente_prioritariotbl_variable_desactualizada" FromRole="tbl_paciente_prioritario" ToRole="tbl_variable_desactualizada" />
+        </EntityType>
+        <EntityType Name="tbl_rol">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Guid" Nullable="false" />
+          <Property Name="nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbl_usuario_rol" Relationship="Model.FK_tbl_usuario_rol_tbl_rol" FromRole="tbl_rol" ToRole="tbl_usuario_rol" />
+        </EntityType>
+        <EntityType Name="tbl_usuario">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Guid" Nullable="false" />
+          <Property Name="nombres" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="apellidos" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="numCelular" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="idOrganizacion" Type="Guid" Nullable="false" />
+          <Property Name="uid_firebase" Type="String" Nullable="false" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbl_archivo_cac" Relationship="Model.FK_tbl_archivo_cac_tbl_usuario" FromRole="tbl_usuario" ToRole="tbl_archivo_cac" />
+          <NavigationProperty Name="tbl_organizacion" Relationship="Model.FK_tbl_usuario_tbl_organizacion" FromRole="tbl_usuario" ToRole="tbl_organizacion" />
+          <NavigationProperty Name="tbl_usuario_rol" Relationship="Model.FK_tbl_usuario_rol_tbl_usuario" FromRole="tbl_usuario" ToRole="tbl_usuario_rol" />
+        </EntityType>
+        <EntityType Name="tbl_usuario_rol">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Guid" Nullable="false" />
+          <Property Name="idRol" Type="Guid" Nullable="false" />
+          <Property Name="idUsuario" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="tbl_rol" Relationship="Model.FK_tbl_usuario_rol_tbl_rol" FromRole="tbl_usuario_rol" ToRole="tbl_rol" />
+          <NavigationProperty Name="tbl_usuario" Relationship="Model.FK_tbl_usuario_rol_tbl_usuario" FromRole="tbl_usuario_rol" ToRole="tbl_usuario" />
+        </EntityType>
+        <EntityType Name="tbl_validacion_archivo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Guid" Nullable="false" />
+          <Property Name="descripcion" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="fechaCreacion" Type="DateTime" Nullable="false" />
+          <Property Name="idArchivo" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="tbl_archivo_cac" Relationship="Model.FK_tbl_validacion_archivo_tbl_archivo_cac" FromRole="tbl_validacion_archivo" ToRole="tbl_archivo_cac" />
+        </EntityType>
+        <EntityType Name="tbl_variable_prioritaria">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="nombreVariable" Type="String" Nullable="false" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <Property Name="valorVariable" Type="String" Nullable="false" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <Property Name="valorUmbral" Type="String" Nullable="false" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <Property Name="tbl_paciente_prioritario_id" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="tbl_paciente_prioritario" Relationship="Model.FK_tbl_paciente_prioritariotbl_variable_prioritaria" FromRole="tbl_variable_prioritaria" ToRole="tbl_paciente_prioritario" />
+        </EntityType>
+        <Association Name="FK_tbl_archivo_cac_tbl_usuario">
+          <End Type="Model.tbl_usuario" Role="tbl_usuario" Multiplicity="1" />
+          <End Type="Model.tbl_archivo_cac" Role="tbl_archivo_cac" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_usuario">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_archivo_cac">
+              <PropertyRef Name="idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_paciente_prioritario_tbl_archivo_cac">
+          <End Type="Model.tbl_archivo_cac" Role="tbl_archivo_cac" Multiplicity="1" />
+          <End Type="Model.tbl_paciente_prioritario" Role="tbl_paciente_prioritario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_archivo_cac">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_paciente_prioritario">
+              <PropertyRef Name="idArchivo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_validacion_archivo_tbl_archivo_cac">
+          <End Type="Model.tbl_archivo_cac" Role="tbl_archivo_cac" Multiplicity="1" />
+          <End Type="Model.tbl_validacion_archivo" Role="tbl_validacion_archivo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_archivo_cac">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_validacion_archivo">
+              <PropertyRef Name="idArchivo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_usuario_tbl_organizacion">
+          <End Type="Model.tbl_organizacion" Role="tbl_organizacion" Multiplicity="1" />
+          <End Type="Model.tbl_usuario" Role="tbl_usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_organizacion">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_usuario">
+              <PropertyRef Name="idOrganizacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_paciente_prioritariotbl_variable_prioritaria">
+          <End Type="Model.tbl_paciente_prioritario" Role="tbl_paciente_prioritario" Multiplicity="1" />
+          <End Type="Model.tbl_variable_prioritaria" Role="tbl_variable_prioritaria" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_paciente_prioritario">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_variable_prioritaria">
+              <PropertyRef Name="tbl_paciente_prioritario_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_usuario_rol_tbl_rol">
+          <End Type="Model.tbl_rol" Role="tbl_rol" Multiplicity="1" />
+          <End Type="Model.tbl_usuario_rol" Role="tbl_usuario_rol" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_rol">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_usuario_rol">
+              <PropertyRef Name="idRol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_usuario_rol_tbl_usuario">
+          <End Type="Model.tbl_usuario" Role="tbl_usuario" Multiplicity="1" />
+          <End Type="Model.tbl_usuario_rol" Role="tbl_usuario_rol" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_usuario">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_usuario_rol">
+              <PropertyRef Name="idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tbl_cac">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Guid" Nullable="false" />
+          <Property Name="idArchivo" Type="Guid" Nullable="false" />
+          <Property Name="primerNombre" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="segundoNombre" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="primerApellido" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="segundoApellido" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="tipoIdentificacion" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="numIdentificacion" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="fechaNacimiento" Type="DateTime" Nullable="false" />
+          <Property Name="sexo" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="diagHiperArterial" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="fecDiagHiperArterial" Type="DateTime" Nullable="false" />
+          <Property Name="diagDiabetesMellitus" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="fecDiadDiabetesMellitus" Type="DateTime" Nullable="false" />
+          <Property Name="etiologiaCAC" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="PesoKG" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="tallaCtms" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="tensionArtSistolica" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="tensionArtDiastolica" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="creatinina" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="fecUltimaCreatinina" Type="DateTime" Nullable="false" />
+          <Property Name="hemoglobinaGlicosilada" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="fecHemoGlicosilada" Type="DateTime" Nullable="false" />
+          <Property Name="albuminuria" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="fecUltimaAlbuminuria" Type="DateTime" Nullable="false" />
+          <Property Name="creatinuria" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="fecUltimaCreatinuria" Type="DateTime" Nullable="false" />
+          <Property Name="LDL" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="fecUltimaLDL" Type="DateTime" Nullable="false" />
+          <Property Name="PTH" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="fechaPTH" Type="DateTime" Nullable="false" />
+          <Property Name="tasaFiltracionGlomerular" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="diagEnferRenalCronicoERC" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="estadioERC" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbl_archivo_cac" Relationship="Model.FK_tbl_CAC_tbl_archivo_cac" FromRole="tbl_cac" ToRole="tbl_archivo_cac" />
+          <Property Name="idOrganizacion" Type="Guid" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_tbl_CAC_tbl_archivo_cac">
+          <End Type="Model.tbl_archivo_cac" Role="tbl_archivo_cac" Multiplicity="1" />
+          <End Type="Model.tbl_cac" Role="tbl_cac" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_archivo_cac">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_cac">
+              <PropertyRef Name="idArchivo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tbl_variable_desactualizada">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="nombreVariable" Type="String" Nullable="false" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <Property Name="valorVariable" Type="String" Nullable="false" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <Property Name="mesesDesactualizado" Type="String" Nullable="false" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <Property Name="tbl_paciente_prioritario_id" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="tbl_paciente_prioritario" Relationship="Model.FK_tbl_paciente_prioritariotbl_variable_desactualizada" FromRole="tbl_variable_desactualizada" ToRole="tbl_paciente_prioritario" />
+        </EntityType>
+        <Association Name="FK_tbl_paciente_prioritariotbl_variable_desactualizada">
+          <End Type="Model.tbl_paciente_prioritario" Role="tbl_paciente_prioritario" Multiplicity="1" />
+          <End Type="Model.tbl_variable_desactualizada" Role="tbl_variable_desactualizada" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_paciente_prioritario">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_variable_desactualizada">
+              <PropertyRef Name="tbl_paciente_prioritario_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="ModelContainer">
+    <EntitySetMapping Name="tbl_archivo_cac">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.tbl_archivo_cac)">
+        <MappingFragment StoreEntitySet="tbl_archivo_cac">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="tamano" ColumnName="tamano" />
+          <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+          <ScalarProperty Name="numFilasImportadas" ColumnName="numFilasImportadas" />
+          <ScalarProperty Name="urlArchivo" ColumnName="urlArchivo" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_organizacion">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.tbl_organizacion)">
+        <MappingFragment StoreEntitySet="tbl_organizacion">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="NIT" ColumnName="NIT" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="numTelefonico" ColumnName="numTelefonico" />
+          <ScalarProperty Name="eps" ColumnName="eps" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_paciente_prioritario">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.tbl_paciente_prioritario)">
+        <MappingFragment StoreEntitySet="tbl_paciente_prioritario">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombres" ColumnName="nombres" />
+          <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+          <ScalarProperty Name="cedula" ColumnName="cedula" />
+          <ScalarProperty Name="numContacto" ColumnName="numContacto" />
+          <ScalarProperty Name="idArchivo" ColumnName="idArchivo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_rol">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.tbl_rol)">
+        <MappingFragment StoreEntitySet="tbl_rol">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_usuario">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.tbl_usuario)">
+        <MappingFragment StoreEntitySet="tbl_usuario">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombres" ColumnName="nombres" />
+          <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="numCelular" ColumnName="numCelular" />
+          <ScalarProperty Name="idOrganizacion" ColumnName="idOrganizacion" />
+          <ScalarProperty Name="uid_firebase" ColumnName="uid_firebase" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_usuario_rol">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.tbl_usuario_rol)">
+        <MappingFragment StoreEntitySet="tbl_usuario_rol">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idRol" ColumnName="idRol" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_validacion_archivo">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.tbl_validacion_archivo)">
+        <MappingFragment StoreEntitySet="tbl_validacion_archivo">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+          <ScalarProperty Name="idArchivo" ColumnName="idArchivo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_variable_prioritaria">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.tbl_variable_prioritaria)">
+        <MappingFragment StoreEntitySet="tbl_variable_prioritaria">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="nombreVariable" ColumnName="nombreVariable" />
+          <ScalarProperty Name="valorVariable" ColumnName="valorVariable" />
+          <ScalarProperty Name="valorUmbral" ColumnName="valorUmbral" />
+          <ScalarProperty Name="tbl_paciente_prioritario_id" ColumnName="tbl_paciente_prioritario_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_cac">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.tbl_cac)">
+        <MappingFragment StoreEntitySet="tbl_cac">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idArchivo" ColumnName="idArchivo" />
+          <ScalarProperty Name="primerNombre" ColumnName="primerNombre" />
+          <ScalarProperty Name="segundoNombre" ColumnName="segundoNombre" />
+          <ScalarProperty Name="primerApellido" ColumnName="primerApellido" />
+          <ScalarProperty Name="segundoApellido" ColumnName="segundoApellido" />
+          <ScalarProperty Name="tipoIdentificacion" ColumnName="tipoIdentificacion" />
+          <ScalarProperty Name="numIdentificacion" ColumnName="numIdentificacion" />
+          <ScalarProperty Name="fechaNacimiento" ColumnName="fechaNacimiento" />
+          <ScalarProperty Name="sexo" ColumnName="sexo" />
+          <ScalarProperty Name="diagHiperArterial" ColumnName="diagHiperArterial" />
+          <ScalarProperty Name="fecDiagHiperArterial" ColumnName="fecDiagHiperArterial" />
+          <ScalarProperty Name="diagDiabetesMellitus" ColumnName="diagDiabetesMellitus" />
+          <ScalarProperty Name="fecDiadDiabetesMellitus" ColumnName="fecDiadDiabetesMellitus" />
+          <ScalarProperty Name="etiologiaCAC" ColumnName="etiologiaCAC" />
+          <ScalarProperty Name="PesoKG" ColumnName="PesoKG" />
+          <ScalarProperty Name="tallaCtms" ColumnName="tallaCtms" />
+          <ScalarProperty Name="tensionArtSistolica" ColumnName="tensionArtSistolica" />
+          <ScalarProperty Name="tensionArtDiastolica" ColumnName="tensionArtDiastolica" />
+          <ScalarProperty Name="creatinina" ColumnName="creatinina" />
+          <ScalarProperty Name="fecUltimaCreatinina" ColumnName="fecUltimaCreatinina" />
+          <ScalarProperty Name="hemoglobinaGlicosilada" ColumnName="hemoglobinaGlicosilada" />
+          <ScalarProperty Name="fecHemoGlicosilada" ColumnName="fecHemoGlicosilada" />
+          <ScalarProperty Name="albuminuria" ColumnName="albuminuria" />
+          <ScalarProperty Name="fecUltimaAlbuminuria" ColumnName="fecUltimaAlbuminuria" />
+          <ScalarProperty Name="creatinuria" ColumnName="creatinuria" />
+          <ScalarProperty Name="fecUltimaCreatinuria" ColumnName="fecUltimaCreatinuria" />
+          <ScalarProperty Name="LDL" ColumnName="LDL" />
+          <ScalarProperty Name="fecUltimaLDL" ColumnName="fecUltimaLDL" />
+          <ScalarProperty Name="PTH" ColumnName="PTH" />
+          <ScalarProperty Name="fechaPTH" ColumnName="fechaPTH" />
+          <ScalarProperty Name="tasaFiltracionGlomerular" ColumnName="tasaFiltracionGlomerular" />
+          <ScalarProperty Name="diagEnferRenalCronicoERC" ColumnName="diagEnferRenalCronicoERC" />
+          <ScalarProperty Name="estadioERC" ColumnName="estadioERC" />
+          <ScalarProperty Name="idOrganizacion" ColumnName="idOrganizacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_variable_desactualizada">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.tbl_variable_desactualizada)">
+        <MappingFragment StoreEntitySet="tbl_variable_desactualizada">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="nombreVariable" ColumnName="nombreVariable" />
+          <ScalarProperty Name="valorVariable" ColumnName="valorVariable" />
+          <ScalarProperty Name="mesesDesactualizado" ColumnName="mesesDesactualizado" />
+          <ScalarProperty Name="tbl_paciente_prioritario_id" ColumnName="tbl_paciente_prioritario_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+        <DesignerProperty Name="DDLGenerationTemplate" Value="$(VSEFTools)\DBGen\SSDLToMySQL.tt" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="UseLegacyProvider" Value="True" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

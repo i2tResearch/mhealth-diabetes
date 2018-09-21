@@ -1,0 +1,38 @@
+﻿<script src="~/js/jspkg-archive/vendor/jquery-1.7.2.min.js"></script>
+<link href="~/js/jspkg-archive/jquery.dynatable.css" rel="stylesheet" />
+<script src="~/js/jspkg-archive/jquery.dynatable.js"></script>
+<div>
+    <div class="gray-content">
+        <div class="header">
+            <span></span>
+            <h2>Lista de prioritarios</h2>
+        </div>
+        <div class="body">
+            <div class="view">
+                <h4>A continuación se listan los pacientes prioritarios</h4>
+                <div class="table-container">
+                    <table class="errors-table " id="tabla-errores">
+                        <thead>
+                            <tr>
+                                <th>Nombres</th>
+                                <th>Apellidos</th>
+                                <th>Cédula</th>
+                                <th>Número de contacto</th>
+                                <th>Algunas variables prioritarias</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="lista-prioritarios"></tbody>
+                    </table>
+                </div>
+                <div class="centered">
+                    <p class="blue-text">Para descargar los archivo, de click en el icono de la derecha</p>
+                    <a href="#" id="descargar" class="custom-btn mrgn-right" onclick="ConvertorSublist()">Descargar lista</a>
+                    <a href="#" id="descargar" class="custom-btn mrgn-right" onclick="ConvertorSublist()">Descargar lista</a>
+                    <a id="atras" href="#" class="custom-btn">Atrás</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="~/js/prioritarios_lista.js"></script>

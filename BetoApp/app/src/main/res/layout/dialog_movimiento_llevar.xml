@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:paddingBottom="40dp">
+
+    <!-- Título todo REVISAR TODOS LOS LAYOUTS Y ACOMODARLOS BIEN PARA TODOS LOS TAMAÑOS -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tit_no_llevar"
+        android:gravity="center"
+        android:paddingStart="45dp"
+        android:paddingEnd="45dp"
+        android:paddingLeft="45dp"
+        android:paddingRight="45dp"
+        android:paddingTop="25dp"
+        android:paddingBottom="25dp"
+        android:background="@color/fondo_tit"
+        android:id="@+id/tit_no_llevar"
+        android:theme="@style/TituloDialogo"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginTop="20dp"
+        >
+
+        <ImageView
+            android:id="@+id/grabar_toma"
+            android:layout_height="0dp"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_weight="7"
+            android:layout_gravity="center"
+            android:adjustViewBounds="true"
+            android:background="@drawable/chugar_04"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:text="@string/btn_que_hiciste"
+            android:gravity="center"
+            android:layout_marginTop="15dp"
+            android:theme="@style/TextoCuerpo"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:maxLines="3"
+            android:theme="@style/EditTextBlanco"
+            android:background="@drawable/border_view"
+            android:id="@+id/ejercicio_no_llevar"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_orgullo"
+            android:layout_weight="0"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/fondo_tit"
+            android:id="@+id/orgullo"
+            android:theme="@style/Boton"/>
+
+    </LinearLayout>
+
+</LinearLayout>

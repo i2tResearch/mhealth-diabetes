@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo_tit">
+
+    <RelativeLayout android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        >
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_alarm"
+        android:theme="@style/TextoInicio"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:id="@+id/seg"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="25dp"
+        android:gravity="center_horizontal"
+        android:layout_below="@id/seg"
+        android:id="@+id/maya"
+        >
+
+        <Button
+            android:id="@+id/manana"
+            android:layout_height="50dp"
+            android:layout_width="100dp"
+            android:adjustViewBounds="true"
+            android:layout_marginTop="10dp"
+            android:text="@string/btn_uno"
+            android:theme="@style/BotonPaciente"
+            android:background="@android:color/white"
+            />
+
+        <Button
+            android:id="@+id/medio_dia"
+            android:layout_height="50dp"
+            android:layout_width="100dp"
+            android:adjustViewBounds="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:text="@string/btn_dos"
+            android:theme="@style/BotonPaciente"
+            android:background="@android:color/white"
+            android:layout_toRightOf="@id/manana"
+            android:layout_toEndOf="@id/manana"
+            />
+
+        <Button
+            android:id="@+id/tarde"
+            android:layout_height="50dp"
+            android:layout_width="100dp"
+            android:adjustViewBounds="true"
+            android:layout_marginTop="10dp"
+            android:text="@string/btn_tres"
+            android:theme="@style/BotonPaciente"
+            android:background="@android:color/white"
+            android:layout_below="@+id/manana"
+            />
+
+        <Button
+            android:id="@+id/noche"
+            android:layout_height="50dp"
+            android:layout_width="100dp"
+            android:adjustViewBounds="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:text="@string/btn_cuatro"
+            android:theme="@style/BotonPaciente"
+            android:background="@android:color/white"
+            android:layout_toRightOf="@id/tarde"
+            android:layout_toEndOf="@id/tarde"
+            android:layout_below="@id/medio_dia"
+            />
+
+    </RelativeLayout>
+
+        <Button
+            android:id="@+id/noMolestar"
+            android:layout_height="50dp"
+            android:layout_width="130dp"
+            android:adjustViewBounds="true"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="10dp"
+            android:text="@string/btn_no"
+            android:theme="@style/BotonPaciente"
+            android:background="@android:color/white"
+            android:layout_below="@id/maya"
+            android:layout_centerHorizontal="true"
+            />
+
+
+        </RelativeLayout>
+
+    <android.support.v7.widget.AppCompatButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_final"
+        android:padding="10dp"
+        android:id="@+id/siguiente7"
+        android:background="@color/fondo_tit"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:theme="@style/BotonSiguiente"/>
+
+</RelativeLayout>

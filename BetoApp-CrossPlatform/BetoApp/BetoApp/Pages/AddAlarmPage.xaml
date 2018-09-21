@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:BetoApp.Controls"
+    xmlns:conv="clr-namespace:BetoApp.Converters"
+    BackgroundColor="{StaticResource BackgroundColor}"
+    Title="Calendario"
+    x:Class="BetoApp.Pages.AddAlarmPage">
+    
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" Android="13" iOS="13, 25, 13, 13" />
+    </ContentPage.Padding>
+
+    <ContentPage.Resources>
+        <conv:BoolToObjectConverter x:Key="DayBackgroundColorConverter">
+            <x:Arguments>
+                <x:String>#FFFFFF</x:String>
+                <x:String>#093E4C</x:String>
+            </x:Arguments>
+        </conv:BoolToObjectConverter>
+        
+        <conv:BoolToObjectConverter x:Key="DayTextColorConverter">
+            <x:Arguments>
+                <x:String>#093E4C</x:String>
+                <x:String>#FFFFFF</x:String>
+            </x:Arguments>
+        </conv:BoolToObjectConverter>
+
+        <conv:BoolToObjectConverter x:Key="ButtonTextConverter">
+            <x:Arguments>
+                <x:String>Guardar</x:String>
+                <x:String>Crear</x:String>
+            </x:Arguments>
+        </conv:BoolToObjectConverter>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout VerticalOptions="FillAndExpand">
+                <StackLayout VerticalOptions="CenterAndExpand">
+                    <controls:CustomEntry Text="{Binding Name, Mode=TwoWay}" Placeholder="Nombre del paquete" />
+                    <Label Text="Liste los medicamentos:" HorizontalTextAlignment="Start"/>
+                    <Editor Text="{Binding Items, Mode=TwoWay}" />
+                    <Label Text="Horario:" HorizontalTextAlignment="Start"/>
+                    <TimePicker Time="{Binding Hour}" FontSize="Medium" FontAttributes="Bold" HeightRequest="60" TextColor="{StaticResource DarkBlueColor}" BackgroundColor="{StaticResource WhiteColor}" />
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                        <Button Text="L" Command="{Binding SetDayCommand}" CommandParameter="MO" BackgroundColor="{Binding Monday, Converter={StaticResource DayBackgroundColorConverter}}" TextColor="{Binding Monday, Converter={StaticResource DayTextColorConverter}}" WidthRequest="36" FontAttributes="None" />
+                        <Button Text="M" Command="{Binding SetDayCommand}" CommandParameter="TU" BackgroundColor="{Binding Tuesday, Converter={StaticResource DayBackgroundColorConverter}}" TextColor="{Binding Tuesday, Converter={StaticResource DayTextColorConverter}}" WidthRequest="36" FontAttributes="None" />
+                        <Button Text="M" Command="{Binding SetDayCommand}" CommandParameter="WE" BackgroundColor="{Binding Wednesday, Converter={StaticResource DayBackgroundColorConverter}}" TextColor="{Binding Wednesday, Converter={StaticResource DayTextColorConverter}}" WidthRequest="36" FontAttributes="None" />
+                        <Button Text="J" Command="{Binding SetDayCommand}" CommandParameter="TH" BackgroundColor="{Binding Thursday, Converter={StaticResource DayBackgroundColorConverter}}" TextColor="{Binding Thursday, Converter={StaticResource DayTextColorConverter}}" WidthRequest="36" FontAttributes="None" />
+                        <Button Text="V" Command="{Binding SetDayCommand}" CommandParameter="FR" BackgroundColor="{Binding Friday, Converter={StaticResource DayBackgroundColorConverter}}" TextColor="{Binding Friday, Converter={StaticResource DayTextColorConverter}}" WidthRequest="36" FontAttributes="None" />
+                        <Button Text="S" Command="{Binding SetDayCommand}" CommandParameter="SA" BackgroundColor="{Binding Saturday, Converter={StaticResource DayBackgroundColorConverter}}" TextColor="{Binding Saturday, Converter={StaticResource DayTextColorConverter}}" WidthRequest="36" FontAttributes="None" />
+                        <Button Text="D" Command="{Binding SetDayCommand}" CommandParameter="SU" BackgroundColor="{Binding Sunday, Converter={StaticResource DayBackgroundColorConverter}}" TextColor="{Binding Sunday, Converter={StaticResource DayTextColorConverter}}" WidthRequest="36" FontAttributes="None" />
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                    <Button Text="Eliminar" Command="{Binding DeletePackageCommand}" IsVisible="{Binding EditMode}" VerticalOptions="End" HorizontalOptions="FillAndExpand" />
+                    <Button Text="{Binding EditMode, Converter={StaticResource ButtonTextConverter}}" Command="{Binding AddPackageCommand}" VerticalOptions="End" HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

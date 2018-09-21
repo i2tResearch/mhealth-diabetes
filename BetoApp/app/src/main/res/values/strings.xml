@@ -1,0 +1,251 @@
+<resources>
+    <string name="app_name">Beto App</string>
+
+    <!-- Common -->
+    <string name="sigui"><![CDATA[<i>siguiente</i>&#160;]]></string>
+    <string name="sel">Selecciona una opción</string>
+
+    <!-- Inicio -->
+    <string name="txt_inicio"><![CDATA[Para empezar, necesito saber algunas <b>cosas</b> de ti]]></string>
+
+    <!-- Rol -->
+    <string name="btn_pac"><![CDATA[Eres <b>paciente</b>]]></string>
+    <string name="btn_cuida"><![CDATA[Eres <b>cuidador</b>]]></string>
+
+    <!-- Edad -->
+    <string name="txt_edad">Tu fecha de nacimiento es:</string>
+    <string name="txt_sexo">Tu sexo es:</string>
+    <string name="txt_dd">dd</string>
+    <string name="txt_mm">mm</string>
+    <string name="txt_yy">aaaa</string>
+    <string name="txt_m">M</string>
+    <string name="txt_f">F</string>
+
+    <!-- Ciudad -->
+    <string name="txt_ciudad">En qué ciudad vives:</string>
+    <string name="txt_barrio">En qué barrio de la ciudad vives:</string>
+    <string name="txt_llenar">Por favor llenar los campos</string>
+
+    <!-- Medicamento -->
+    <string name="txt_terminamos">¡Ya casi terminamos!</string>
+    <string name="txt_medicamento">Cuántas veces al día tomas el medicamento de la diabetes:</string>
+    <string name="txt_uno">1</string>
+    <string name="txt_dos">2</string>
+    <string name="txt_tres">3</string>
+
+    <!-- Ejercicio -->
+    <string name="txt_ejerc">¿Haces actividad física?</string>
+    <string name="txt_tipo">¿Qué tipo de actividad física haces?</string>
+    <string name="txt_si">Si</string>
+    <string name="txt_no">No</string>
+    <string name="txt_cami">Caminar</string>
+    <string name="txt_bici">Bicicleta</string>
+    <string name="txt_gimna">Gimnasio</string>
+    <string name="txt_otro">Otro</string>
+
+    <!-- Alarma -->
+    <string name="txt_alarm">Por último, a qué horas quisieras que te hiciera preguntas:</string>
+    <string name="btn_uno">9 a 11 am</string>
+    <string name="btn_dos">12 a 2 pm</string>
+    <string name="btn_tres">2 a 5 pm</string>
+    <string name="btn_cuatro">5 a 8 pm</string>
+    <string name="btn_no">No quisiera</string>
+    <string name="btn_final"><![CDATA[<i>finalizar</i>&#160;]]></string>
+
+    <!-- Fin -->
+    <string name="txt_ahora">¡Bienvenido!</string>
+    <string name="txt_fin"><![CDATA[<b>Soy Beto</b>, una aplicación que quiere ayudarte a <b>recordar</b> ciertos asuntos
+        relacionados con cuidados y que quiere saber tus <b>estados de ánimo</b> diarios.]]></string>
+    <string name="txt_empezamos"><![CDATA[<i>¿empezamos?</i>&#160;]]></string>
+
+    <!-- Estado de animo -->
+    <string name="tit_animo"><![CDATA[Cuéntame, ¿cómo <b>te sientes?</b>]]></string>
+    <string name="btn_mas_tarde">Responder más tarde</string>
+    <string name="btn_no_molestar">No volver a preguntar</string>
+
+    <!-- Molesto-->
+    <string name="tit_molesto"><![CDATA[Vale, vale. Sé que a veces <b>molesto mucho.</b>]]></string>
+    <string name="btn_no_molesto">No molesto más por hoy</string>
+
+    <!-- Formulario -->
+    <string name="tit_form"><![CDATA[¿Y por qué te <b>sientes</b> así?]]></string>
+    <string name="tit_hint">Cuéntame por qué, escribiendo aquí o grabando un audio</string>
+    <string name="btn_pqrs"><![CDATA[<u>¿Tiene que ver con la atención médica? Marca aquí.</u>]]></string>
+    <string name="btn_listo">Listo. Enviar.</string>
+    <string name="llenar_form">Escribir o grabar una respuesta.</string>
+    <string name="no_archi">No se pudo enviar el archivo</string>
+
+    <!-- Toma de medicamento -->
+    <string name="tit_toma_medicamento"><![CDATA[Hola! Ya te tomaste <b>el medicamento</b>?]]></string>
+    <string name="btn_recordar">Recordarme en 30 minutos</string>
+    <string name="btn_ya_tomo">Ya me lo tomé</string>
+
+    <!-- Trabajo-->
+    <string name="tit_trabajo"><![CDATA[Oye, me vasa dejar sin <b>trabajo</b>]]></string>
+    <string name="btn_jaja">jajajajaja</string>
+
+    <!-- Refuerzo medicamento -->
+    <string name="tit_refuerzo_medicamento"><![CDATA[Hola. Creo que es tiempo de tomarse <b>el medicamento.</b>]]></string>
+
+    <!-- Trabajo-->
+    <string name="tit_vale">Vale</string>
+    <string name="btn_30">En 30 minutos te recuerdo.</string>
+
+    <!-- Caminar -->
+    <string name="tit_caminar"><![CDATA[Hoy no te has movido mucho. <b>¿Por qué no sales a caminar un rato?</b>]]></string>
+    <string name="btn_recuerda_tarde">Recuérdame más tarde</string>
+    <string name="btn_vamos">¡Vamos!</string>
+    <string name="btn_ahora_no">Ahora no puedo</string>
+
+    <!-- Actividad Fisica -->
+    <string name="tit_actividad_fisica"><![CDATA[Entiendo, pero recuerda que debes hacer un <b>mínimo de 30 min</b> de actividad física diaría.]]></string>
+    <string name="btn_ya_hice">Ya lo hice.</string>
+    <string name="btn_tarde_hare">Más tarde lo haré.</string>
+
+    <!-- Animo -->
+    <string name="tit_animo_mov"><![CDATA[¡Ánimo! Ya falta poco para completar tu meta de <b>movimiento diario.</b>]]></string>
+    <string name="btn_ya_casi">Ya casi lo logras.</string>
+
+    <!-- Muy bien -->
+    <string name="tit_muy_bien"><![CDATA[¡Muy bien! Haz completado tu meta de <b>movimiento diario.</b>]]></string>
+    <string name="btn_orgullo_ti">Estoy orgulloso de ti.</string>
+
+    <!-- Bien -->
+    <string name="tit_bien"><![CDATA[Qué bien. Te has empezado a <b>mover.</b>]]></string>
+    <string name="btn_recuerda_30">Recuerda que son solo 30 minutos</string>
+
+    <!-- Llevar -->
+    <string name="tit_no_llevar">¿Y no me llevaste contigo?</string>
+    <string name="btn_que_hiciste">Entonces cuéntame qué hiciste:</string>
+    <string name="btn_orgullo">Igual me siento orgulloso</string>
+
+    <string-array name="meses">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+    </string-array>
+
+    <string-array name="dias">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+        <item>29</item>
+        <item>30</item>
+        <item>31</item>
+    </string-array>
+
+    <string-array name="anos">
+        <item>1940</item>
+        <item>1941</item>
+        <item>1942</item>
+        <item>1943</item>
+        <item>1944</item>
+        <item>1945</item>
+        <item>1946</item>
+        <item>1947</item>
+        <item>1948</item>
+        <item>1949</item>
+        <item>1950</item>
+        <item>1951</item>
+        <item>1952</item>
+        <item>1953</item>
+        <item>1954</item>
+        <item>1955</item>
+        <item>1956</item>
+        <item>1957</item>
+        <item>1958</item>
+        <item>1959</item>
+        <item>1960</item>
+        <item>1961</item>
+        <item>1962</item>
+        <item>1963</item>
+        <item>1964</item>
+        <item>1965</item>
+        <item>1966</item>
+        <item>1967</item>
+        <item>1968</item>
+        <item>1969</item>
+        <item>1970</item>
+        <item>1971</item>
+        <item>1972</item>
+        <item>1973</item>
+        <item>1974</item>
+        <item>1975</item>
+        <item>1976</item>
+        <item>1977</item>
+        <item>1978</item>
+        <item>1979</item>
+        <item>1980</item>
+        <item>1981</item>
+        <item>1982</item>
+        <item>1983</item>
+        <item>1984</item>
+        <item>1985</item>
+        <item>1986</item>
+        <item>1987</item>
+        <item>1988</item>
+        <item>1989</item>
+        <item>1990</item>
+        <item>1991</item>
+        <item>1992</item>
+        <item>1993</item>
+        <item>1994</item>
+        <item>1995</item>
+        <item>1996</item>
+        <item>1997</item>
+        <item>1998</item>
+        <item>1999</item>
+        <item>2000</item>
+        <item>2001</item>
+        <item>2002</item>
+        <item>2003</item>
+        <item>2004</item>
+        <item>2005</item>
+        <item>2006</item>
+        <item>2007</item>
+        <item>2008</item>
+        <item>2009</item>
+        <item>2010</item>
+        <item>2011</item>
+        <item>2013</item>
+        <item>2013</item>
+        <item>2014</item>
+        <item>2015</item>
+        <item>2016</item>
+        <item>2017</item>
+    </string-array>
+</resources>

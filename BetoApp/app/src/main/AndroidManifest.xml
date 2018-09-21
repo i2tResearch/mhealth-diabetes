@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="co.edu.icesi.i2t.chugarapp">
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MANAGE_USERS" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/icono"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <receiver android:name=".alarm.AlarmReceiver" />
+        <receiver
+            android:name=".alarm.BootReceiver"
+            android:enabled="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".alarm.SchedulingService" />
+
+        <activity
+            android:name=".activities.AlarmaAnimo"
+            android:theme="@style/Theme.AppCompat.Translucent" />
+        <activity
+            android:name=".activities.Formulario"
+            android:theme="@style/Theme.AppCompat.Dialog" />
+        <activity
+            android:name=".activities.Pregunta"
+            android:theme="@style/Theme.AppCompat.Translucent">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.AlarmaMedicamento"
+            android:theme="@style/Theme.AppCompat.Translucent" />
+        <activity android:name=".activities.AlarmaEjercicio"
+            android:theme="@style/Theme.AppCompat.Translucent" />
+    </application>
+
+</manifest>

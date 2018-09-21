@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo_tit">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_ciudad"
+                android:theme="@style/TextoInicio"
+                android:gravity="center"
+                android:id="@+id/lciu"
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginTop="10dp"
+                android:maxLines="1"
+                android:inputType="text"
+                android:gravity="center"
+                android:theme="@style/EditTextBlanco"
+                android:background="@android:color/white"
+                android:id="@+id/ciudad"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_barrio"
+                android:layout_marginTop="30dp"
+                android:theme="@style/TextoInicio"
+                android:id="@+id/lbarrio"
+                android:gravity="center"
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginTop="10dp"
+                android:maxLines="1"
+                android:inputType="text"
+                android:gravity="center"
+                android:theme="@style/EditTextBlanco"
+                android:background="@android:color/white"
+                android:id="@+id/barrio"
+                />
+
+        </LinearLayout>
+
+    <android.support.v7.widget.AppCompatButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sigui"
+        android:padding="10dp"
+        android:id="@+id/siguiente4"
+        android:background="@color/fondo_tit"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:theme="@style/BotonSiguiente"/>
+
+</RelativeLayout>

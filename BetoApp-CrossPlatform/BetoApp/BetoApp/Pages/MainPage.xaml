@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:BetoApp"
+    BackgroundColor="{StaticResource BackgroundColor}"
+    BindingContext="{Binding Main, Source={StaticResource Locator}}"
+    x:Class="BetoApp.Pages.MainPage">
+    
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" Android="13" iOS="13, 25, 13, 13" />
+    </ContentPage.Padding>
+    
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <StackLayout VerticalOptions="Start" Orientation="Horizontal">
+                    <Label Text="{Binding CurrentUser.Name, StringFormat='Hola {0}!'}" HorizontalOptions="StartAndExpand" VerticalOptions="Center" />
+                    <Image Source="walk" HorizontalOptions="End" HeightRequest="32" IsVisible="false">
+                       <Image.GestureRecognizers>
+                           <TapGestureRecognizer Command="{Binding LogOutCommand}" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                    
+                    <Button
+                        Text="Calendario de medicamentos"
+                        Command="{Binding OpenCalendarCommand}"
+                        BackgroundColor="{StaticResource WhiteColor}"
+                        TextColor="{StaticResource DarkBlueColor}"
+                        HeightRequest="150"
+                        Margin="0,0,0,50" />
+
+                    <Label Text="Cuéntame, cómo te sientes?" />
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                        <StackLayout VerticalOptions="FillAndExpand">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding SetFeelingCommand}" CommandParameter="GOOD" />
+                            </StackLayout.GestureRecognizers>
+                            <Image Source="feelgood" WidthRequest="60" VerticalOptions="FillAndExpand" />
+                            <Label Text="Bien" VerticalOptions="End" FontSize="Default" />
+                        </StackLayout>
+                        <StackLayout VerticalOptions="FillAndExpand" Margin="8,0,8,0">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding SetFeelingCommand}" CommandParameter="OK" />
+                            </StackLayout.GestureRecognizers>
+                            <Image Source="feelok" WidthRequest="60" VerticalOptions="FillAndExpand" />
+                            <Label Text="Normal" VerticalOptions="End" FontSize="Default" />
+                        </StackLayout>
+                        <StackLayout VerticalOptions="FillAndExpand">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding SetFeelingCommand}" CommandParameter="BAD" />
+                            </StackLayout.GestureRecognizers>
+                            <Image Source="feelbad" WidthRequest="60" VerticalOptions="FillAndExpand" />
+                            <Label Text="Mal" VerticalOptions="End" FontSize="Default" />
+                        </StackLayout>
+                    </StackLayout>
+                    
+                </StackLayout>
+                
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

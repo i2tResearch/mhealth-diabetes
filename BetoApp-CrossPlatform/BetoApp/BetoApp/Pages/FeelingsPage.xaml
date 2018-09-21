@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:conv="clr-namespace:BetoApp.Converters"
+    BackgroundColor="{StaticResource BackgroundColor}"
+    BindingContext="{Binding Main, Source={StaticResource Locator}}"
+    Title="Beto"
+    x:Class="BetoApp.Pages.FeelingsPage">
+
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" Android="13" iOS="13, 25, 13, 13" />
+    </ContentPage.Padding>
+
+    <ContentPage.Resources>
+        <conv:StringToLowerCaseConverter x:Key="StringToLowerCaseConverter" />
+        <conv:BoolNegationConverter x:Key="BoolNegationConverter" />
+
+        <conv:EqualToObjectConverter x:Key="TitleTextConverter">
+            <x:Arguments>
+                <x:String>Qué bien! Quieres contarme un poco más?</x:String>
+                <x:String>Por qué te sientes así?</x:String>
+            </x:Arguments>
+        </conv:EqualToObjectConverter>
+
+        <conv:BoolToObjectConverter x:Key="MicLogoConverter">
+            <x:Arguments>
+                <x:String>micoff</x:String>
+                <x:String>micon</x:String>
+            </x:Arguments>
+        </conv:BoolToObjectConverter>
+
+        <conv:BoolToObjectConverter x:Key="RecordTextConverter">
+            <x:Arguments>
+                <x:String>- grabando... presiona para terminar -</x:String>
+                <x:String>- presiona para empezar a grabar -</x:String>
+            </x:Arguments>
+        </conv:BoolToObjectConverter>
+
+        <conv:BoolToObjectConverter x:Key="PlayLogoConverter">
+            <x:Arguments>
+                <x:String>stop</x:String>
+                <x:String>play</x:String>
+            </x:Arguments>
+        </conv:BoolToObjectConverter>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout BindingContext="{Binding Feelings}" VerticalOptions="FillAndExpand">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand">
+                    <Image Source="{Binding Feeling, StringFormat='feel{0}.png', Converter={StaticResource StringToLowerCaseConverter}}" HeightRequest="64" WidthRequest="64" />
+                    <Label Text="{Binding Feeling, Converter={StaticResource TitleTextConverter}, ConverterParameter=GOOD}" HorizontalTextAlignment="Start" VerticalOptions="Center" />
+                </StackLayout>
+
+                <StackLayout VerticalOptions="Center" IsVisible="{Binding Recorded, Converter={StaticResource BoolNegationConverter}}">
+                    <Image Source="{Binding Recording, Converter={StaticResource MicLogoConverter}}" HeightRequest="150" WidthRequest="150">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding RecordAudioCommand}" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label Text="{Binding Recording, Converter={StaticResource RecordTextConverter}}" FontSize="Small" />
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="Center" VerticalOptions="Center" IsVisible="{Binding Recorded}">
+                    <Image Source="{Binding Playing, Converter={StaticResource PlayLogoConverter}}" HeightRequest="150" WidthRequest="150">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding PlayAudioCommand}" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Image Source="micon" IsVisible="{Binding Recorded}" HeightRequest="64" WidthRequest="64" HorizontalOptions="End" Margin="0,-10,0,0">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding DiscardAudioCommand}" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand">
+                    <Button Text="Enviar" Command="{Binding SendAudioCommand}" HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+                
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

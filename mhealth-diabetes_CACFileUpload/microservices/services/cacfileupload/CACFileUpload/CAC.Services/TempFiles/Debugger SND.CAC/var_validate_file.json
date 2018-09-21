@@ -1,0 +1,430 @@
+[
+  {
+    "Name": "Primer_Nombre",
+    "Type": "Text",
+    "Nullable": false,
+    "Duplicate": true,
+    "Format": "",
+    "DefaultValue": "",
+    "SelectList": null
+  },
+  {
+    "Name": "Segundo_Nombre",
+    "Type": "Text",
+    "Nullable": true,
+    "Duplicate": true,
+    "Format": "",
+    "DefaultValue": "",
+    "SelectList": null
+  },
+  {
+    "Name": "Primer_Apellido",
+    "Type": "Text",
+    "Nullable": false,
+    "Duplicate": true,
+    "Format": "",
+    "DefaultValue": "",
+    "SelectList": null
+  },
+  {
+    "Name": "Segundo_Apellido",
+    "Type": "Text",
+    "Nullable": false,
+    "Duplicate": true,
+    "Format": "",
+    "DefaultValue": "NOAP",
+    "SelectList": null
+  },
+  {
+    "Name": "Tipo_Identificacion",
+    "Type": "Text",
+    "Nullable": false,
+    "Duplicate": true,
+    "Format": "",
+    "DefaultValue": "CC",
+    "SelectList": [
+      {
+        "Value": "RC",
+        "Description": "Registro Civil"
+      },
+      {
+        "Value": "TI",
+        "Description": "Tarjeta Identidad"
+      },
+      {
+        "Value": "CC",
+        "Description": "Cedula de Ciudadania"
+      },
+      {
+        "Value": "CE",
+        "Description": "Cedula Extranjeria"
+      },
+      {
+        "Value": "PA",
+        "Description": "Pasaporte"
+      },
+      {
+        "Value": "MS",
+        "Description": "Menor sin Identificacion (solo para el Regimen Subsidiado)"
+      },
+      {
+        "Value": "AS",
+        "Description": "Adulto sin Identificacion (solo para el Regimen Subsidiado)"
+      },
+      {
+        "Value": "CD",
+        "Description": "Carnet Diplomatico"
+      }
+    ]
+  },
+  {
+    "Name": "Numero_Identificacion",
+    "Type": "TextNumber",
+    "Nullable": false,
+    "Duplicate": false,
+    "Format": "",
+    "DefaultValue": "",
+    "SelectList": null
+  },
+  {
+    "Name": "Fecha_Nacimiento",
+    "Type": "DateTimeText",
+    "Nullable": false,
+    "Duplicate": true,
+    "Format": "yyyy-MM-dd",
+    "DefaultValue": "1845-01-01",
+    "SelectList": null
+  },
+  {
+    "Name": "Sexo",
+    "Type": "Text",
+    "Nullable": false,
+    "Duplicate": true,
+    "Format": "",
+    "DefaultValue": "F",
+    "SelectList": [
+      {
+        "Value": "F",
+        "Description": "Femenino"
+      },
+      {
+        "Value": "M",
+        "Description": "Masculino"
+      }
+    ]
+  },
+  {
+    "Name": "Numero_Telefonico",
+    "Type": "TextNumber",
+    "Nullable": true,
+    "Duplicate": true,
+    "Format": "",
+    "DefaultValue": "",
+    "SelectList": null
+  },
+  {
+    "Name": "Diagnostico_Hipertension_Arterial",
+    "Type": "Number",
+    "Nullable": false,
+    "Duplicate": true,
+    "Format": "",
+    "DefaultValue": "2",
+    "SelectList": [
+      {
+        "Value": 1,
+        "Description": "SI"
+      },
+      {
+        "Value": 2,
+        "Description": "NO"
+      }
+    ]
+  },
+  {
+    "Name": "Fecha_Diagnostico_Hipertension_Arterial",
+    "Type": "DateTimeText",
+    "Nullable": false,
+    "Duplicate": true,
+    "Format": "yyyy-MM-dd",
+    "DefaultValue": "1845-01-01",
+    "SelectList": null
+  },
+  {
+    "Name": "Diagnostico_Diabetes_Mellitus",
+    "Type": "Number",
+    "Nullable": false,
+    "Duplicate": true,
+    "Format": "",
+    "DefaultValue": "2",
+    "SelectList": [
+      {
+        "Value": 1,
+        "Description": "SI"
+      },
+      {
+        "Value": 2,
+        "Description": "NO"
+      }
+    ]
+  },
+  {
+    "Name": "Fecha_Diagnostico_Diabetes_Mellitus",
+    "Type": "DateTimeText",
+    "Nullable": false,
+    "Duplicate": true,
+    "Format": "yyyy-MM-dd",
+    "DefaultValue": "1845-01-01",
+    "SelectList": null
+  },
+  {
+    "Name": "Etiologia_CAC",
+    "Type": "Number",
+    "Nullable": false,
+    "Duplicate": true,
+    "Format": "",
+    "DefaultValue": "98",
+    "SelectList": [
+      {
+        "Value": 1,
+        "Description": " HTA o DM"
+      },
+      {
+        "Value": 2,
+        "Description": " Autoinmune"
+      },
+      {
+        "Value": 3,
+        "Description": " Nefropatia Obstructiva"
+      },
+      {
+        "Value": 4,
+        "Description": " Enfermedad Poliquistica"
+      },
+      {
+        "Value": 5,
+        "Description": "Otras"
+      },
+      {
+        "Value": 98,
+        "Description": " Si no tiene ERC"
+      }
+    ]
+  },
+  {
+    "Name": "Peso_Kilogramos",
+    "Type": "Number",
+    "Nullable": false,
+    "Duplicate": true,
+    "Format": "",
+    "DefaultValue": "1",
+    "SelectList": null
+  },
+  {
+    "Name": "Talla_centimetros",
+    "Type": "Number",
+    "Nullable": false,
+    "Duplicate": true,
+    "Format": "",
+    "DefaultValue": "10",
+    "SelectList": null
+  },
+  {
+    "Name": "Tension_Arterial_Sistolica_mmHg",
+    "Type": "Number",
+    "Nullable": false,
+    "Duplicate": true,
+    "Format": "",
+    "DefaultValue": "999",
+    "SelectList": null
+  },
+  {
+    "Name": "Tension_Arterial_Diastolica_mmHg",
+    "Type": "Number",
+    "Nullable": false,
+    "Duplicate": true,
+    "Format": "",
+    "DefaultValue": "999",
+    "SelectList": null
+  },
+  {
+    "Name": "Creatinina",
+    "Type": "Number",
+    "Nullable": false,
+    "Duplicate": true,
+    "Format": "",
+    "DefaultValue": "98",
+    "SelectList": null
+  },
+  {
+    "Name": "Fecha_Ultima_Creatinina",
+    "Type": "DateTimeText",
+    "Nullable": false,
+    "Duplicate": true,
+    "Format": "yyyy-MM-dd",
+    "DefaultValue": "1845-01-01",
+    "SelectList": null
+  },
+  {
+    "Name": "Hemoglobina_Glicosilada",
+    "Type": "Number",
+    "Nullable": false,
+    "Duplicate": true,
+    "Format": "",
+    "DefaultValue": "98",
+    "SelectList": null
+  },
+  {
+    "Name": "Fecha_Ultima_Hemoglobina_Glicosilada",
+    "Type": "DateTimeText",
+    "Nullable": false,
+    "Duplicate": true,
+    "Format": "yyyy-MM-dd",
+    "DefaultValue": "1845-01-01",
+    "SelectList": null
+  },
+  {
+    "Name": "Albuminuria",
+    "Type": "Number",
+    "Nullable": false,
+    "Duplicate": true,
+    "Format": "",
+    "DefaultValue": "999",
+    "SelectList": null
+  },
+  {
+    "Name": "Fecha_Ultima_Albuminuria",
+    "Type": "DateTimeText",
+    "Nullable": false,
+    "Duplicate": true,
+    "Format": "yyyy-MM-dd",
+    "DefaultValue": "1845-01-01",
+    "SelectList": null
+  },
+  {
+    "Name": "Creatinuria",
+    "Type": "Number",
+    "Nullable": false,
+    "Duplicate": true,
+    "Format": "",
+    "DefaultValue": "98",
+    "SelectList": null
+  },
+  {
+    "Name": "Fecha_Ultima_Creatinuria",
+    "Type": "DateTimeText",
+    "Nullable": false,
+    "Duplicate": true,
+    "Format": "yyyy-MM-dd",
+    "DefaultValue": "1845-01-01",
+    "SelectList": null
+  },
+  {
+    "Name": "LDL",
+    "Type": "Number",
+    "Nullable": false,
+    "Duplicate": true,
+    "Format": "",
+    "DefaultValue": "999",
+    "SelectList": null
+  },
+  {
+    "Name": "Fecha_Ultimo_LDL",
+    "Type": "DateTimeText",
+    "Nullable": false,
+    "Duplicate": true,
+    "Format": "yyyy-MM-dd",
+    "DefaultValue": "1845-01-01",
+    "SelectList": null
+  },
+  {
+    "Name": "PTH",
+    "Type": "Number",
+    "Nullable": false,
+    "Duplicate": true,
+    "Format": "",
+    "DefaultValue": "999",
+    "SelectList": null
+  },
+  {
+    "Name": "Fecha_PTH",
+    "Type": "DateTimeText",
+    "Nullable": false,
+    "Duplicate": true,
+    "Format": "yyyy-MM-dd",
+    "DefaultValue": "1845-01-01",
+    "SelectList": null
+  },
+  {
+    "Name": "Tasa_Filtracion_Glomerular_TFG",
+    "Type": "Number",
+    "Nullable": false,
+    "Duplicate": true,
+    "Format": "",
+    "DefaultValue": "999",
+    "SelectList": null
+  },
+  {
+    "Name": "Diagnostico_Enfermedad_Renal_Cronico_ERC",
+    "Type": "Number",
+    "Nullable": false,
+    "Duplicate": true,
+    "Format": "",
+    "DefaultValue": "3",
+    "SelectList": [
+      {
+        "Value": 0,
+        "Description": "No presenta Enfermedad Renal Cronica;"
+      },
+      {
+        "Value": 1,
+        "Description": "presenta ERC;"
+      },
+      {
+        "Value": 2,
+        "Description": "Indeterminado entre estadios 1, 2 o sin ERC;"
+      },
+      {
+        "Value": 3,
+        "Description": "el usuario no ha sido estudiado para ERC."
+      }
+    ]
+  },
+  {
+    "Name": "Estadio_ERC",
+    "Type": "Number",
+    "Nullable": false,
+    "Duplicate": true,
+    "Format": "",
+    "DefaultValue": "98",
+    "SelectList": [
+      {
+        "Value": 1,
+        "Description": "el usuario tiene TFGE igual o mayor a 90 ml/min y pruebas clinicas que soportan danio renal"
+      },
+      {
+        "Value": 2,
+        "Description": "el usuario tiene TFGE entre 60 y menor de 90 ml/min y pruebas clinicas que soportan danio renal"
+      },
+      {
+        "Value": 3,
+        "Description": "el usuario tiene TFGE entre 30 y menor de 60 ml/min"
+      },
+      {
+        "Value": 4,
+        "Description": "el usuario tiene TFG entre 15 y menor de 30 ml/min"
+      },
+      {
+        "Value": 5,
+        "Description": "el usuario tiene menos de 15 ml/min de TFG"
+      },
+      {
+        "Value": 98,
+        "Description": "No aplica, no hay Enfermedad Renal Cronica;"
+      },
+      {
+        "Value": 99,
+        "Description": "Desconocido (Sin reporte de Creatinina vigente o indeterminado)"
+      }
+    ]
+  }
+]

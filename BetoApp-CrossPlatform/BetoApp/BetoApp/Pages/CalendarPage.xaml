@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:conv="clr-namespace:BetoApp.Converters"
+    BackgroundColor="{StaticResource BackgroundColor}"
+    BindingContext="{Binding Main, Source={StaticResource Locator}}"
+    Title="Calendario"
+    x:Class="BetoApp.Pages.CalendarPage">
+    
+    <!--BindingContext="{Binding Main, Source={StaticResource Locator}}"-->
+    <!--
+    xmlns:local="clr-namespace:BetoApp"
+    BindingContext="{x:Static local:Infrastructure.InstanceLocatorDesign.Main}"
+    -->
+
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" Android="13" iOS="13, 25, 13, 13" />
+    </ContentPage.Padding>
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="Add" Order="Primary" Text="+ Nuevo" Priority="0" Command="{Binding Calendar.AddAlarmCommand}" />
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Resources>
+        <conv:BoolToObjectConverter x:Key="DayColorConverter">
+            <x:Arguments>
+                <x:String>#FFFFFF</x:String>
+                <x:String>#067D96</x:String>
+            </x:Arguments>
+        </conv:BoolToObjectConverter>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <ScrollView BindingContext="{Binding Calendar}">
+            <ListView BackgroundColor="{StaticResource BackgroundColor}" ItemsSource="{Binding Alarms}" ItemTapped="Handle_ItemTapped" HasUnevenRows="true" SeparatorColor="#067D96">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="8,8,8,8">
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding Id}" LineBreakMode="TailTruncation" FontSize="Large" FontAttributes="Bold" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start" />
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="End">
+                                        <Label Text="L" FontSize="Large" TextColor="{Binding Monday, Converter={StaticResource DayColorConverter}}" />
+                                        <Label Text="M" FontSize="Large" TextColor="{Binding Tuesday, Converter={StaticResource DayColorConverter}}" />
+                                        <Label Text="M" FontSize="Large" TextColor="{Binding Wednesday, Converter={StaticResource DayColorConverter}}" />
+                                        <Label Text="J" FontSize="Large" TextColor="{Binding Thursday, Converter={StaticResource DayColorConverter}}" />
+                                        <Label Text="V" FontSize="Large" TextColor="{Binding Friday, Converter={StaticResource DayColorConverter}}" />
+                                        <Label Text="S" FontSize="Large" TextColor="{Binding Saturday, Converter={StaticResource DayColorConverter}}" />
+                                        <Label Text="D" FontSize="Large" TextColor="{Binding Sunday, Converter={StaticResource DayColorConverter}}" />
+                                    </StackLayout>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding Items}" FontSize="Small" HorizontalTextAlignment="Start" HorizontalOptions="FillAndExpand" />
+                                    <StackLayout Orientation="Horizontal" WidthRequest="72">
+                                        <BoxView VerticalOptions="FillAndExpand" WidthRequest="1" BackgroundColor="#067D96" />
+                                        <Label Text="{Binding Hour, StringFormat=\{0:h\\:mm\}}" FontSize="Large" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center" HorizontalOptions="FillAndExpand" />
+                                    </StackLayout>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

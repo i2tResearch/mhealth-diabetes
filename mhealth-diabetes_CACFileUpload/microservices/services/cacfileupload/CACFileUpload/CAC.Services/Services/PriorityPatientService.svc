@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="CAC.Services.Services.PriorityPatient" CodeBehind="PriorityPatientService.svc.cs" %>

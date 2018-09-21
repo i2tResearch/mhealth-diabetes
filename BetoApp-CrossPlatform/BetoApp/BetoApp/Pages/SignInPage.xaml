@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:conv="clr-namespace:BetoApp.Converters"
+    xmlns:models="clr-namespace:BetoApp.Models"
+    xmlns:controls="clr-namespace:BetoApp.Controls"
+    BackgroundColor="{StaticResource BackgroundColor}"
+    BindingContext="{Binding SignIn, Source={StaticResource Locator}}"
+    x:Class="BetoApp.Pages.SignInPage">
+
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" Android="13" iOS="13, 25, 13, 13" />
+    </ContentPage.Padding>
+    
+    <ContentPage.Resources>
+        <conv:EqualToObjectConverter x:Key="StateVisibilityConverter">
+            <x:Arguments>
+                <x:String>true</x:String>
+                <x:String>false</x:String>
+            </x:Arguments>
+        </conv:EqualToObjectConverter>
+
+        <conv:EqualToObjectConverter x:Key="NextTextConverter">
+            <x:Arguments>
+                <x:String>Empezamos?</x:String>
+                <x:String>Siguiente</x:String>
+            </x:Arguments>
+        </conv:EqualToObjectConverter>
+
+        <conv:BoolToObjectConverter x:Key="ValidDateColorConverter">
+            <x:Arguments>
+                <x:String>#093E4C</x:String>
+                <x:String>#FF4081</x:String>
+            </x:Arguments>
+        </conv:BoolToObjectConverter>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                
+                <!-- STATE_INIT -->
+
+                <StackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand" IsVisible="{Binding State, Converter={StaticResource StateVisibilityConverter}, ConverterParameter=STATE_INIT}">
+                    <Label Text="Antes de empezar, necesito saber algunas cosas de ti" />
+                </StackLayout>
+
+                <!-- STATE_ROLE -->
+
+                <StackLayout Margin="50" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" IsVisible="{Binding State, Converter={StaticResource StateVisibilityConverter}, ConverterParameter=STATE_ROLE}">
+                    <Button
+                        Text="Eres paciente"
+                        Command="{Binding SetRoleCommand}" CommandParameter="{x:Static models:User.ROLE_PATIENT}"
+                        BackgroundColor="{Binding Role, Converter={StaticResource ButtonBackgroundColorConverter}, ConverterParameter={x:Static models:User.ROLE_PATIENT}}"
+                        TextColor="{Binding Role, Converter={StaticResource ButtonTextColorConverter}, ConverterParameter={x:Static models:User.ROLE_PATIENT}}"
+                        HeightRequest="150" />
+                    <Button
+                        Text="Eres cuidador"
+                        Command="{Binding SetRoleCommand}" CommandParameter="{x:Static models:User.ROLE_KEEPER}"
+                        BackgroundColor="{Binding Role, Converter={StaticResource ButtonBackgroundColorConverter}, ConverterParameter={x:Static models:User.ROLE_KEEPER}}"
+                        TextColor="{Binding Role, Converter={StaticResource ButtonTextColorConverter}, ConverterParameter={x:Static models:User.ROLE_KEEPER}}"
+                        HeightRequest="150" />
+                </StackLayout>
+
+                <!-- STATE_BIRTHDAY_AND_GENRE -->
+
+                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" IsVisible="{Binding State, Converter={StaticResource StateVisibilityConverter}, ConverterParameter=STATE_BIRTHDAY_AND_GENRE}">
+                    <Label Text="Cuándo naciste?" />
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                        <Picker 
+                            Title="Día"
+                            ItemsSource="{Binding DaysList}" 
+                            SelectedItem="{Binding Day}"
+                            TextColor="{Binding BirthdayIsValid,
+                            Converter={StaticResource ValidDateColorConverter}}" />
+                        <Picker 
+                            Title="Mes"
+                            ItemsSource="{Binding MonthsList}" 
+                            SelectedItem="{Binding Month}" 
+                            TextColor="{Binding BirthdayIsValid, 
+                            Converter={StaticResource ValidDateColorConverter}}" />
+                        <Picker 
+                            Title="Año"
+                            ItemsSource="{Binding YearsList}"
+                            SelectedItem="{Binding Year}"
+                            TextColor="{Binding BirthdayIsValid,
+                            Converter={StaticResource ValidDateColorConverter}}" />
+                    </StackLayout>
+
+                    <Label Text="Tu sexo es:" />
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                        <Button 
+                            Text="M"
+                            Command="{Binding SetGenderCommand}" CommandParameter="{x:Static models:User.GENDER_M}"
+                            BackgroundColor="{Binding Gender, Converter={StaticResource ButtonBackgroundColorConverter}, ConverterParameter={x:Static models:User.GENDER_M}}"
+                            TextColor="{Binding Gender, Converter={StaticResource ButtonTextColorConverter}, ConverterParameter={x:Static models:User.GENDER_M}}"
+                            WidthRequest="70" HeightRequest="60" />
+                        <Button 
+                            Text="F"
+                            Command="{Binding SetGenderCommand}" CommandParameter="{x:Static models:User.GENDER_F}"
+                            BackgroundColor="{Binding Gender, Converter={StaticResource ButtonBackgroundColorConverter}, ConverterParameter={x:Static models:User.GENDER_F}}"
+                            TextColor="{Binding Gender, Converter={StaticResource ButtonTextColorConverter}, ConverterParameter={x:Static models:User.GENDER_F}}"
+                            WidthRequest="70" HeightRequest="60" />
+                    </StackLayout>
+                </StackLayout>
+
+                <!-- STATE_CITY -->
+
+                <StackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand" IsVisible="{Binding State, Converter={StaticResource StateVisibilityConverter}, ConverterParameter=STATE_CITY}">
+                    <Label Text="En qué ciudad vives?" />
+                    <controls:CustomEntry Placeholder="Ciudad" Text="{Binding City, Mode=TwoWay}" />
+                    <Label Text="En qué barrio?" />
+                    <controls:CustomEntry Placeholder="Barrio" Text="{Binding Neighborhood, Mode=TwoWay}" />
+                </StackLayout>
+
+                <!-- STATE_EXERCISE -->
+
+                <StackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand" IsVisible="{Binding State, Converter={StaticResource StateVisibilityConverter}, ConverterParameter=STATE_EXERCISE}">
+                    <Label Text="Qué actividad física haces?" Margin="0,0,0,50"/>
+
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                        <Button 
+                            Text="Caminar"
+                            Command="{Binding SetExerciseCommand}" CommandParameter="{x:Static models:User.EXERCISE_WALK}"
+                            BackgroundColor="{Binding Exercise, Converter={StaticResource ButtonBackgroundColorConverter}, ConverterParameter={x:Static models:User.EXERCISE_WALK}}"
+                            TextColor="{Binding Exercise, Converter={StaticResource ButtonTextColorConverter}, ConverterParameter={x:Static models:User.EXERCISE_WALK}}"
+                            FontAttributes = "None"
+                            WidthRequest="100" HeightRequest="60" />
+                        <Button 
+                            Text="Bicicleta"
+                            Command="{Binding SetExerciseCommand}" CommandParameter="{x:Static models:User.EXERCISE_BIKE}"
+                            BackgroundColor="{Binding Exercise, Converter={StaticResource ButtonBackgroundColorConverter}, ConverterParameter={x:Static models:User.EXERCISE_BIKE}}"
+                            TextColor="{Binding Exercise, Converter={StaticResource ButtonTextColorConverter}, ConverterParameter={x:Static models:User.EXERCISE_BIKE}}"
+                            FontAttributes = "None"
+                            WidthRequest="100" HeightRequest="60" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                        <Button 
+                            Text="Gimnasio"
+                            Command="{Binding SetExerciseCommand}" CommandParameter="{x:Static models:User.EXERCISE_GYM}"
+                            BackgroundColor="{Binding Exercise, Converter={StaticResource ButtonBackgroundColorConverter}, ConverterParameter={x:Static models:User.EXERCISE_GYM}}"
+                            TextColor="{Binding Exercise, Converter={StaticResource ButtonTextColorConverter}, ConverterParameter={x:Static models:User.EXERCISE_GYM}}"
+                            FontAttributes = "None"
+                            WidthRequest="100" HeightRequest="60" />
+                        <Button 
+                            Text="Otra"
+                            Command="{Binding SetExerciseCommand}" CommandParameter="{x:Static models:User.EXERCISE_OTHER}"
+                            BackgroundColor="{Binding Exercise, Converter={StaticResource ButtonBackgroundColorConverter}, ConverterParameter={x:Static models:User.EXERCISE_OTHER}}"
+                            TextColor="{Binding Exercise, Converter={StaticResource ButtonTextColorConverter}, ConverterParameter={x:Static models:User.EXERCISE_OTHER}}"
+                            FontAttributes = "None"
+                            WidthRequest="100" HeightRequest="60" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                        <Button 
+                            Text="Ninguna"
+                            Command="{Binding SetExerciseCommand}" CommandParameter="{x:Static models:User.EXERCISE_NONE}"
+                            BackgroundColor="{Binding Exercise, Converter={StaticResource ButtonBackgroundColorConverter}, ConverterParameter={x:Static models:User.EXERCISE_NONE}}"
+                            TextColor="{Binding Exercise, Converter={StaticResource ButtonTextColorConverter}, ConverterParameter={x:Static models:User.EXERCISE_NONE}}"
+                            FontAttributes = "None"
+                            WidthRequest="100" HeightRequest="60" />
+                    </StackLayout>
+                </StackLayout>
+
+                <!-- STATE_FINAL -->
+
+                <StackLayout Margin="50" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" IsVisible="{Binding State, Converter={StaticResource StateVisibilityConverter}, ConverterParameter=STATE_FINAL}">
+                    <Label Text="Bienvenido!" Margin="0,0,0,50" />
+                    <Label Text="Soy Beto, una aplicación que quiere ayudarte a recordar algunos asuntos de tu cuidado médico básico" />
+                    <Label Text="Cómo te llamas?"  Margin="0,50,0,0"/>
+                    <controls:CustomEntry Placeholder="Nombre" Text="{Binding Name, Mode=TwoWay}" />
+                </StackLayout>
+
+                <!-- NEXT BUTTON -->
+
+                <Button 
+                    Text="{Binding State, Converter={StaticResource NextTextConverter}, ConverterParameter=STATE_FINAL}"
+                    Command="{Binding NextCommand}"
+                    BackgroundColor="{StaticResource BackgroundColor}"
+                    TextColor="{StaticResource WhiteColor}"
+                    BorderColor="{StaticResource BackgroundColor}"
+                    HorizontalOptions="End"
+                    VerticalOptions="End" />
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A16477B3-5487-45B0-BF9D-3CD03466942D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Indicadores.Library</RootNamespace>
+    <AssemblyName>Indicadores.Library</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.7.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.7.9\lib\net45\MySql.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data.Entity.EF5, Version=6.7.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.Entity.6.7.9\lib\net45\MySql.Data.Entity.EF5.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BP\Totales\Albuminuria.cs" />
+    <Compile Include="BP\Totales\CalculoIndicadores.cs" />
+    <Compile Include="BP\CalculoIndicadoresProceso.cs" />
+    <Compile Include="BP\ControlDiabetesMellitus.cs" />
+    <Compile Include="BP\ControlHipertensionArterialIndicador.cs" />
+    <Compile Include="BP\ControlLDL.cs" />
+    <Compile Include="BP\ControlPTHERC3.cs" />
+    <Compile Include="BP\ControlPTHERC4.cs" />
+    <Compile Include="BP\ControlPTHERC5.cs" />
+    <Compile Include="BP\Totales\Creatinina.cs" />
+    <Compile Include="BP\Totales\HbA1c.cs" />
+    <Compile Include="BP\MedicionAlbuminuria.cs" />
+    <Compile Include="BP\MedicionHbA1.cs" />
+    <Compile Include="BP\MedicionLDL.cs" />
+    <Compile Include="BP\MedicionPTHERC5.cs" />
+    <Compile Include="BP\MedicionPTHERC3.cs" />
+    <Compile Include="BP\MedicionPTHERC4.cs" />
+    <Compile Include="BP\MedicionTiempoCreatinina.cs" />
+    <Compile Include="BP\ProgresionEnfermedadRenal.cs" />
+    <Compile Include="BP\Totales\HipertensionArterial.cs" />
+    <Compile Include="BP\Totales\LDL.cs" />
+    <Compile Include="BP\Totales\ProgresionEnferRenal.cs" />
+    <Compile Include="BP\Totales\PTH3.cs" />
+    <Compile Include="BP\Totales\PTH4.cs" />
+    <Compile Include="BP\Totales\PTH5.cs" />
+    <Compile Include="Model\DB\ConexionProcAlmacenados.cs" />
+    <Compile Include="Model\DB\ConstantesPrcs.cs" />
+    <Compile Include="Model\DB\Resultado.cs" />
+    <Compile Include="Model\DB\ResultadoIndicador.cs" />
+    <Compile Include="Model\DTO\DTOIndicador.cs" />
+    <Compile Include="Model\DTO\DTOIndicadorTotales.cs" />
+    <Compile Include="Model\Utilities\Configuration.cs" />
+    <Compile Include="Model\Utilities\Constants.cs" />
+    <Compile Include="Model\Utilities\IOUtilities.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

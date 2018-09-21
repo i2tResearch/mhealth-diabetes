@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="mhealthdiabetesdbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="mhealthdiabetesdb" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="Prc_ControlDiabetesMellitus" ReturnType="Collection(mhealthdiabetesdbModel.Prc_Indicador_Result)">
+      <Parameter Name="fechaIni_IN" Mode="In" Type="DateTime" />
+      <Parameter Name="intervalo_IN" Mode="In" Type="Int32" />
+      <Parameter Name="idOrganizacion_IN" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Prc_ControlLDL">
+      <Parameter Name="fechaIni_IN" Mode="In" Type="DateTime" />
+      <Parameter Name="intervalo_IN" Mode="In" Type="Int32" />
+      <Parameter Name="idOrganizacion_IN" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Prc_ControlPTH">
+      <Parameter Name="fechaIni_IN" Mode="In" Type="DateTime" />
+      <Parameter Name="intervalo_IN" Mode="In" Type="Int32" />
+      <Parameter Name="estadioERC_IN" Mode="In" Type="Int32" />
+      <Parameter Name="PTHMayor_IN" Mode="In" Type="Int32" />
+      <Parameter Name="PTHMenor_IN" Mode="In" Type="Int32" />
+      <Parameter Name="idOrganizacion_IN" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Prc_MedicionAlbuminuria">
+      <Parameter Name="fechaIni_IN" Mode="In" Type="DateTime" />
+      <Parameter Name="intervalo_IN" Mode="In" Type="Int32" />
+      <Parameter Name="idOrganizacion_IN" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Prc_MedicionCreatinina">
+      <Parameter Name="fechaIni_IN" Mode="In" Type="DateTime" />
+      <Parameter Name="intervalo_IN" Mode="In" Type="Int32" />
+      <Parameter Name="idOrganizacion_IN" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Prc_MedicionHbA1c">
+      <Parameter Name="fechaIni_IN" Mode="In" Type="DateTime" />
+      <Parameter Name="intervalo_IN" Mode="In" Type="Int32" />
+      <Parameter Name="idOrganizacion_IN" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Prc_MedicionLDL">
+      <Parameter Name="fechaIni_IN" Mode="In" Type="DateTime" />
+      <Parameter Name="intervalo_IN" Mode="In" Type="Int32" />
+      <Parameter Name="idOrganizacion_IN" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Prc_MedicionPTH">
+      <Parameter Name="fechaIni_IN" Mode="In" Type="DateTime" />
+      <Parameter Name="intervalo_IN" Mode="In" Type="Int32" />
+      <Parameter Name="estadioERC_IN" Mode="In" Type="Int32" />
+      <Parameter Name="idOrganizacion_IN" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Prc_ProgresionEnfermedadRenal">
+      <Parameter Name="fechaIni_IN" Mode="In" Type="DateTime" />
+      <Parameter Name="intervalo_IN" Mode="In" Type="Int32" />
+      <Parameter Name="idOrganizacion_IN" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="Prc_Indicador_Result" />
+</Schema>
